@@ -1263,6 +1263,12 @@ impl ObjectPrivilege {
                 "PrivilegeGroupCollectionReadWrite"
             }
             ObjectPrivilege::PrivilegeGroupCollectionAdmin => "PrivilegeGroupCollectionAdmin",
+<<<<<<< HEAD
+=======
+            ObjectPrivilege::PrivilegeGetImportProgress => "PrivilegeGetImportProgress",
+            ObjectPrivilege::PrivilegeListImport => "PrivilegeListImport",
+            ObjectPrivilege::PrivilegeAddCollectionField => "PrivilegeAddCollectionField",
+>>>>>>> d82a365 (format the code)
         }
     }
     /// Creates an enum from field names used in the ProtoBuf definition.
