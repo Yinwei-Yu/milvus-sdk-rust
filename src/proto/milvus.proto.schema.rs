@@ -191,10 +191,14 @@ pub mod value_field {
 #[allow(clippy::derive_partial_eq_without_eq)]
 #[derive(Clone, PartialEq, ::prost::Message)]
 pub struct ScalarField {
+<<<<<<< HEAD
     #[prost(
         oneof = "scalar_field::Data",
         tags = "1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 12"
     )]
+=======
+    #[prost(oneof = "scalar_field::Data", tags = "1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 12")]
+>>>>>>> c00d092 (update the proto file to the latest 2.5)
     pub data: ::core::option::Option<scalar_field::Data>,
 }
 /// Nested message and enum types in `ScalarField`.
