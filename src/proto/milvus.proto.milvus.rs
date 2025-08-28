@@ -1007,20 +1007,10 @@ pub struct SearchRequest {
     #[prost(message, repeated, tag = "17")]
     pub sub_reqs: ::prost::alloc::vec::Vec<SubSearchRequest>,
     #[prost(map = "string, message", tag = "18")]
-<<<<<<< HEAD
-    pub expr_template_values:
-        ::std::collections::HashMap<::prost::alloc::string::String, super::schema::TemplateValue>,
-<<<<<<< HEAD
-=======
-    #[prost(message, optional, tag = "19")]
-    pub function_score: ::core::option::Option<super::schema::FunctionScore>,
->>>>>>> d82a365 (format the code)
-=======
     pub expr_template_values: ::std::collections::HashMap<
         ::prost::alloc::string::String,
         super::schema::TemplateValue,
     >,
->>>>>>> c00d092 (update the proto file to the latest 2.5)
 }
 #[allow(clippy::derive_partial_eq_without_eq)]
 #[derive(Clone, PartialEq, ::prost::Message)]
@@ -2814,20 +2804,10 @@ pub mod milvus_service_client {
         pub async fn create_collection(
             &mut self,
             request: impl tonic::IntoRequest<super::CreateCollectionRequest>,
-<<<<<<< HEAD
-        ) -> std::result::Result<tonic::Response<super::super::common::Status>, tonic::Status>
-        {
-=======
-        ) -> Result<tonic::Response<super::super::common::Status>, tonic::Status> {
-<<<<<<< HEAD
->>>>>>> d82a365 (format the code)
-            self.inner.ready().await.map_err(|e| {
-                tonic::Status::new(
-                    tonic::Code::Unknown,
-                    format!("Service was not ready: {}", e.into()),
-                )
-            })?;
-=======
+        ) -> std::result::Result<
+            tonic::Response<super::super::common::Status>,
+            tonic::Status,
+        > {
             self.inner
                 .ready()
                 .await
@@ -2837,35 +2817,27 @@ pub mod milvus_service_client {
                         format!("Service was not ready: {}", e.into()),
                     )
                 })?;
->>>>>>> c00d092 (update the proto file to the latest 2.5)
             let codec = tonic::codec::ProstCodec::default();
             let path = http::uri::PathAndQuery::from_static(
                 "/milvus.proto.milvus.MilvusService/CreateCollection",
             );
             let mut req = request.into_request();
-            req.extensions_mut().insert(GrpcMethod::new(
-                "milvus.proto.milvus.MilvusService",
-                "CreateCollection",
-            ));
+            req.extensions_mut()
+                .insert(
+                    GrpcMethod::new(
+                        "milvus.proto.milvus.MilvusService",
+                        "CreateCollection",
+                    ),
+                );
             self.inner.unary(req, path, codec).await
         }
         pub async fn drop_collection(
             &mut self,
             request: impl tonic::IntoRequest<super::DropCollectionRequest>,
-<<<<<<< HEAD
-        ) -> std::result::Result<tonic::Response<super::super::common::Status>, tonic::Status>
-        {
-=======
-        ) -> Result<tonic::Response<super::super::common::Status>, tonic::Status> {
-<<<<<<< HEAD
->>>>>>> d82a365 (format the code)
-            self.inner.ready().await.map_err(|e| {
-                tonic::Status::new(
-                    tonic::Code::Unknown,
-                    format!("Service was not ready: {}", e.into()),
-                )
-            })?;
-=======
+        ) -> std::result::Result<
+            tonic::Response<super::super::common::Status>,
+            tonic::Status,
+        > {
             self.inner
                 .ready()
                 .await
@@ -2875,34 +2847,24 @@ pub mod milvus_service_client {
                         format!("Service was not ready: {}", e.into()),
                     )
                 })?;
->>>>>>> c00d092 (update the proto file to the latest 2.5)
             let codec = tonic::codec::ProstCodec::default();
             let path = http::uri::PathAndQuery::from_static(
                 "/milvus.proto.milvus.MilvusService/DropCollection",
             );
             let mut req = request.into_request();
-            req.extensions_mut().insert(GrpcMethod::new(
-                "milvus.proto.milvus.MilvusService",
-                "DropCollection",
-            ));
+            req.extensions_mut()
+                .insert(
+                    GrpcMethod::new(
+                        "milvus.proto.milvus.MilvusService",
+                        "DropCollection",
+                    ),
+                );
             self.inner.unary(req, path, codec).await
         }
         pub async fn has_collection(
             &mut self,
             request: impl tonic::IntoRequest<super::HasCollectionRequest>,
-<<<<<<< HEAD
         ) -> std::result::Result<tonic::Response<super::BoolResponse>, tonic::Status> {
-=======
-        ) -> Result<tonic::Response<super::BoolResponse>, tonic::Status> {
-<<<<<<< HEAD
->>>>>>> d82a365 (format the code)
-            self.inner.ready().await.map_err(|e| {
-                tonic::Status::new(
-                    tonic::Code::Unknown,
-                    format!("Service was not ready: {}", e.into()),
-                )
-            })?;
-=======
             self.inner
                 .ready()
                 .await
@@ -2912,35 +2874,24 @@ pub mod milvus_service_client {
                         format!("Service was not ready: {}", e.into()),
                     )
                 })?;
->>>>>>> c00d092 (update the proto file to the latest 2.5)
             let codec = tonic::codec::ProstCodec::default();
             let path = http::uri::PathAndQuery::from_static(
                 "/milvus.proto.milvus.MilvusService/HasCollection",
             );
             let mut req = request.into_request();
-            req.extensions_mut().insert(GrpcMethod::new(
-                "milvus.proto.milvus.MilvusService",
-                "HasCollection",
-            ));
+            req.extensions_mut()
+                .insert(
+                    GrpcMethod::new("milvus.proto.milvus.MilvusService", "HasCollection"),
+                );
             self.inner.unary(req, path, codec).await
         }
         pub async fn load_collection(
             &mut self,
             request: impl tonic::IntoRequest<super::LoadCollectionRequest>,
-<<<<<<< HEAD
-        ) -> std::result::Result<tonic::Response<super::super::common::Status>, tonic::Status>
-        {
-=======
-        ) -> Result<tonic::Response<super::super::common::Status>, tonic::Status> {
-<<<<<<< HEAD
->>>>>>> d82a365 (format the code)
-            self.inner.ready().await.map_err(|e| {
-                tonic::Status::new(
-                    tonic::Code::Unknown,
-                    format!("Service was not ready: {}", e.into()),
-                )
-            })?;
-=======
+        ) -> std::result::Result<
+            tonic::Response<super::super::common::Status>,
+            tonic::Status,
+        > {
             self.inner
                 .ready()
                 .await
@@ -2950,35 +2901,27 @@ pub mod milvus_service_client {
                         format!("Service was not ready: {}", e.into()),
                     )
                 })?;
->>>>>>> c00d092 (update the proto file to the latest 2.5)
             let codec = tonic::codec::ProstCodec::default();
             let path = http::uri::PathAndQuery::from_static(
                 "/milvus.proto.milvus.MilvusService/LoadCollection",
             );
             let mut req = request.into_request();
-            req.extensions_mut().insert(GrpcMethod::new(
-                "milvus.proto.milvus.MilvusService",
-                "LoadCollection",
-            ));
+            req.extensions_mut()
+                .insert(
+                    GrpcMethod::new(
+                        "milvus.proto.milvus.MilvusService",
+                        "LoadCollection",
+                    ),
+                );
             self.inner.unary(req, path, codec).await
         }
         pub async fn release_collection(
             &mut self,
             request: impl tonic::IntoRequest<super::ReleaseCollectionRequest>,
-<<<<<<< HEAD
-        ) -> std::result::Result<tonic::Response<super::super::common::Status>, tonic::Status>
-        {
-=======
-        ) -> Result<tonic::Response<super::super::common::Status>, tonic::Status> {
-<<<<<<< HEAD
->>>>>>> d82a365 (format the code)
-            self.inner.ready().await.map_err(|e| {
-                tonic::Status::new(
-                    tonic::Code::Unknown,
-                    format!("Service was not ready: {}", e.into()),
-                )
-            })?;
-=======
+        ) -> std::result::Result<
+            tonic::Response<super::super::common::Status>,
+            tonic::Status,
+        > {
             self.inner
                 .ready()
                 .await
@@ -2988,35 +2931,27 @@ pub mod milvus_service_client {
                         format!("Service was not ready: {}", e.into()),
                     )
                 })?;
->>>>>>> c00d092 (update the proto file to the latest 2.5)
             let codec = tonic::codec::ProstCodec::default();
             let path = http::uri::PathAndQuery::from_static(
                 "/milvus.proto.milvus.MilvusService/ReleaseCollection",
             );
             let mut req = request.into_request();
-            req.extensions_mut().insert(GrpcMethod::new(
-                "milvus.proto.milvus.MilvusService",
-                "ReleaseCollection",
-            ));
+            req.extensions_mut()
+                .insert(
+                    GrpcMethod::new(
+                        "milvus.proto.milvus.MilvusService",
+                        "ReleaseCollection",
+                    ),
+                );
             self.inner.unary(req, path, codec).await
         }
         pub async fn describe_collection(
             &mut self,
             request: impl tonic::IntoRequest<super::DescribeCollectionRequest>,
-<<<<<<< HEAD
-        ) -> std::result::Result<tonic::Response<super::DescribeCollectionResponse>, tonic::Status>
-        {
-=======
-        ) -> Result<tonic::Response<super::DescribeCollectionResponse>, tonic::Status> {
-<<<<<<< HEAD
->>>>>>> d82a365 (format the code)
-            self.inner.ready().await.map_err(|e| {
-                tonic::Status::new(
-                    tonic::Code::Unknown,
-                    format!("Service was not ready: {}", e.into()),
-                )
-            })?;
-=======
+        ) -> std::result::Result<
+            tonic::Response<super::DescribeCollectionResponse>,
+            tonic::Status,
+        > {
             self.inner
                 .ready()
                 .await
@@ -3026,39 +2961,24 @@ pub mod milvus_service_client {
                         format!("Service was not ready: {}", e.into()),
                     )
                 })?;
->>>>>>> c00d092 (update the proto file to the latest 2.5)
             let codec = tonic::codec::ProstCodec::default();
             let path = http::uri::PathAndQuery::from_static(
                 "/milvus.proto.milvus.MilvusService/DescribeCollection",
             );
             let mut req = request.into_request();
-            req.extensions_mut().insert(GrpcMethod::new(
-                "milvus.proto.milvus.MilvusService",
-                "DescribeCollection",
-            ));
+            req.extensions_mut()
+                .insert(
+                    GrpcMethod::new(
+                        "milvus.proto.milvus.MilvusService",
+                        "DescribeCollection",
+                    ),
+                );
             self.inner.unary(req, path, codec).await
         }
         pub async fn get_collection_statistics(
             &mut self,
             request: impl tonic::IntoRequest<super::GetCollectionStatisticsRequest>,
-<<<<<<< HEAD
-<<<<<<< HEAD
         ) -> std::result::Result<
-            tonic::Response<super::GetCollectionStatisticsResponse>,
-            tonic::Status,
-        > {
-=======
-        ) -> Result<tonic::Response<super::GetCollectionStatisticsResponse>, tonic::Status>
-        {
->>>>>>> d82a365 (format the code)
-            self.inner.ready().await.map_err(|e| {
-                tonic::Status::new(
-                    tonic::Code::Unknown,
-                    format!("Service was not ready: {}", e.into()),
-                )
-            })?;
-=======
-        ) -> Result<
             tonic::Response<super::GetCollectionStatisticsResponse>,
             tonic::Status,
         > {
@@ -3071,35 +2991,27 @@ pub mod milvus_service_client {
                         format!("Service was not ready: {}", e.into()),
                     )
                 })?;
->>>>>>> c00d092 (update the proto file to the latest 2.5)
             let codec = tonic::codec::ProstCodec::default();
             let path = http::uri::PathAndQuery::from_static(
                 "/milvus.proto.milvus.MilvusService/GetCollectionStatistics",
             );
             let mut req = request.into_request();
-            req.extensions_mut().insert(GrpcMethod::new(
-                "milvus.proto.milvus.MilvusService",
-                "GetCollectionStatistics",
-            ));
+            req.extensions_mut()
+                .insert(
+                    GrpcMethod::new(
+                        "milvus.proto.milvus.MilvusService",
+                        "GetCollectionStatistics",
+                    ),
+                );
             self.inner.unary(req, path, codec).await
         }
         pub async fn show_collections(
             &mut self,
             request: impl tonic::IntoRequest<super::ShowCollectionsRequest>,
-<<<<<<< HEAD
-        ) -> std::result::Result<tonic::Response<super::ShowCollectionsResponse>, tonic::Status>
-        {
-=======
-        ) -> Result<tonic::Response<super::ShowCollectionsResponse>, tonic::Status> {
-<<<<<<< HEAD
->>>>>>> d82a365 (format the code)
-            self.inner.ready().await.map_err(|e| {
-                tonic::Status::new(
-                    tonic::Code::Unknown,
-                    format!("Service was not ready: {}", e.into()),
-                )
-            })?;
-=======
+        ) -> std::result::Result<
+            tonic::Response<super::ShowCollectionsResponse>,
+            tonic::Status,
+        > {
             self.inner
                 .ready()
                 .await
@@ -3109,35 +3021,27 @@ pub mod milvus_service_client {
                         format!("Service was not ready: {}", e.into()),
                     )
                 })?;
->>>>>>> c00d092 (update the proto file to the latest 2.5)
             let codec = tonic::codec::ProstCodec::default();
             let path = http::uri::PathAndQuery::from_static(
                 "/milvus.proto.milvus.MilvusService/ShowCollections",
             );
             let mut req = request.into_request();
-            req.extensions_mut().insert(GrpcMethod::new(
-                "milvus.proto.milvus.MilvusService",
-                "ShowCollections",
-            ));
+            req.extensions_mut()
+                .insert(
+                    GrpcMethod::new(
+                        "milvus.proto.milvus.MilvusService",
+                        "ShowCollections",
+                    ),
+                );
             self.inner.unary(req, path, codec).await
         }
         pub async fn alter_collection(
             &mut self,
             request: impl tonic::IntoRequest<super::AlterCollectionRequest>,
-<<<<<<< HEAD
-        ) -> std::result::Result<tonic::Response<super::super::common::Status>, tonic::Status>
-        {
-=======
-        ) -> Result<tonic::Response<super::super::common::Status>, tonic::Status> {
-<<<<<<< HEAD
->>>>>>> d82a365 (format the code)
-            self.inner.ready().await.map_err(|e| {
-                tonic::Status::new(
-                    tonic::Code::Unknown,
-                    format!("Service was not ready: {}", e.into()),
-                )
-            })?;
-=======
+        ) -> std::result::Result<
+            tonic::Response<super::super::common::Status>,
+            tonic::Status,
+        > {
             self.inner
                 .ready()
                 .await
@@ -3147,35 +3051,27 @@ pub mod milvus_service_client {
                         format!("Service was not ready: {}", e.into()),
                     )
                 })?;
->>>>>>> c00d092 (update the proto file to the latest 2.5)
             let codec = tonic::codec::ProstCodec::default();
             let path = http::uri::PathAndQuery::from_static(
                 "/milvus.proto.milvus.MilvusService/AlterCollection",
             );
             let mut req = request.into_request();
-            req.extensions_mut().insert(GrpcMethod::new(
-                "milvus.proto.milvus.MilvusService",
-                "AlterCollection",
-            ));
+            req.extensions_mut()
+                .insert(
+                    GrpcMethod::new(
+                        "milvus.proto.milvus.MilvusService",
+                        "AlterCollection",
+                    ),
+                );
             self.inner.unary(req, path, codec).await
         }
         pub async fn alter_collection_field(
             &mut self,
             request: impl tonic::IntoRequest<super::AlterCollectionFieldRequest>,
-<<<<<<< HEAD
-        ) -> std::result::Result<tonic::Response<super::super::common::Status>, tonic::Status>
-        {
-=======
-        ) -> Result<tonic::Response<super::super::common::Status>, tonic::Status> {
-<<<<<<< HEAD
->>>>>>> d82a365 (format the code)
-            self.inner.ready().await.map_err(|e| {
-                tonic::Status::new(
-                    tonic::Code::Unknown,
-                    format!("Service was not ready: {}", e.into()),
-                )
-            })?;
-=======
+        ) -> std::result::Result<
+            tonic::Response<super::super::common::Status>,
+            tonic::Status,
+        > {
             self.inner
                 .ready()
                 .await
@@ -3185,35 +3081,27 @@ pub mod milvus_service_client {
                         format!("Service was not ready: {}", e.into()),
                     )
                 })?;
->>>>>>> c00d092 (update the proto file to the latest 2.5)
             let codec = tonic::codec::ProstCodec::default();
             let path = http::uri::PathAndQuery::from_static(
                 "/milvus.proto.milvus.MilvusService/AlterCollectionField",
             );
             let mut req = request.into_request();
-            req.extensions_mut().insert(GrpcMethod::new(
-                "milvus.proto.milvus.MilvusService",
-                "AlterCollectionField",
-            ));
+            req.extensions_mut()
+                .insert(
+                    GrpcMethod::new(
+                        "milvus.proto.milvus.MilvusService",
+                        "AlterCollectionField",
+                    ),
+                );
             self.inner.unary(req, path, codec).await
         }
         pub async fn create_partition(
             &mut self,
             request: impl tonic::IntoRequest<super::CreatePartitionRequest>,
-<<<<<<< HEAD
-        ) -> std::result::Result<tonic::Response<super::super::common::Status>, tonic::Status>
-        {
-=======
-        ) -> Result<tonic::Response<super::super::common::Status>, tonic::Status> {
-<<<<<<< HEAD
->>>>>>> d82a365 (format the code)
-            self.inner.ready().await.map_err(|e| {
-                tonic::Status::new(
-                    tonic::Code::Unknown,
-                    format!("Service was not ready: {}", e.into()),
-                )
-            })?;
-=======
+        ) -> std::result::Result<
+            tonic::Response<super::super::common::Status>,
+            tonic::Status,
+        > {
             self.inner
                 .ready()
                 .await
@@ -3223,35 +3111,27 @@ pub mod milvus_service_client {
                         format!("Service was not ready: {}", e.into()),
                     )
                 })?;
->>>>>>> c00d092 (update the proto file to the latest 2.5)
             let codec = tonic::codec::ProstCodec::default();
             let path = http::uri::PathAndQuery::from_static(
                 "/milvus.proto.milvus.MilvusService/CreatePartition",
             );
             let mut req = request.into_request();
-            req.extensions_mut().insert(GrpcMethod::new(
-                "milvus.proto.milvus.MilvusService",
-                "CreatePartition",
-            ));
+            req.extensions_mut()
+                .insert(
+                    GrpcMethod::new(
+                        "milvus.proto.milvus.MilvusService",
+                        "CreatePartition",
+                    ),
+                );
             self.inner.unary(req, path, codec).await
         }
         pub async fn drop_partition(
             &mut self,
             request: impl tonic::IntoRequest<super::DropPartitionRequest>,
-<<<<<<< HEAD
-        ) -> std::result::Result<tonic::Response<super::super::common::Status>, tonic::Status>
-        {
-=======
-        ) -> Result<tonic::Response<super::super::common::Status>, tonic::Status> {
-<<<<<<< HEAD
->>>>>>> d82a365 (format the code)
-            self.inner.ready().await.map_err(|e| {
-                tonic::Status::new(
-                    tonic::Code::Unknown,
-                    format!("Service was not ready: {}", e.into()),
-                )
-            })?;
-=======
+        ) -> std::result::Result<
+            tonic::Response<super::super::common::Status>,
+            tonic::Status,
+        > {
             self.inner
                 .ready()
                 .await
@@ -3261,34 +3141,21 @@ pub mod milvus_service_client {
                         format!("Service was not ready: {}", e.into()),
                     )
                 })?;
->>>>>>> c00d092 (update the proto file to the latest 2.5)
             let codec = tonic::codec::ProstCodec::default();
             let path = http::uri::PathAndQuery::from_static(
                 "/milvus.proto.milvus.MilvusService/DropPartition",
             );
             let mut req = request.into_request();
-            req.extensions_mut().insert(GrpcMethod::new(
-                "milvus.proto.milvus.MilvusService",
-                "DropPartition",
-            ));
+            req.extensions_mut()
+                .insert(
+                    GrpcMethod::new("milvus.proto.milvus.MilvusService", "DropPartition"),
+                );
             self.inner.unary(req, path, codec).await
         }
         pub async fn has_partition(
             &mut self,
             request: impl tonic::IntoRequest<super::HasPartitionRequest>,
-<<<<<<< HEAD
         ) -> std::result::Result<tonic::Response<super::BoolResponse>, tonic::Status> {
-=======
-        ) -> Result<tonic::Response<super::BoolResponse>, tonic::Status> {
-<<<<<<< HEAD
->>>>>>> d82a365 (format the code)
-            self.inner.ready().await.map_err(|e| {
-                tonic::Status::new(
-                    tonic::Code::Unknown,
-                    format!("Service was not ready: {}", e.into()),
-                )
-            })?;
-=======
             self.inner
                 .ready()
                 .await
@@ -3298,35 +3165,24 @@ pub mod milvus_service_client {
                         format!("Service was not ready: {}", e.into()),
                     )
                 })?;
->>>>>>> c00d092 (update the proto file to the latest 2.5)
             let codec = tonic::codec::ProstCodec::default();
             let path = http::uri::PathAndQuery::from_static(
                 "/milvus.proto.milvus.MilvusService/HasPartition",
             );
             let mut req = request.into_request();
-            req.extensions_mut().insert(GrpcMethod::new(
-                "milvus.proto.milvus.MilvusService",
-                "HasPartition",
-            ));
+            req.extensions_mut()
+                .insert(
+                    GrpcMethod::new("milvus.proto.milvus.MilvusService", "HasPartition"),
+                );
             self.inner.unary(req, path, codec).await
         }
         pub async fn load_partitions(
             &mut self,
             request: impl tonic::IntoRequest<super::LoadPartitionsRequest>,
-<<<<<<< HEAD
-        ) -> std::result::Result<tonic::Response<super::super::common::Status>, tonic::Status>
-        {
-=======
-        ) -> Result<tonic::Response<super::super::common::Status>, tonic::Status> {
-<<<<<<< HEAD
->>>>>>> d82a365 (format the code)
-            self.inner.ready().await.map_err(|e| {
-                tonic::Status::new(
-                    tonic::Code::Unknown,
-                    format!("Service was not ready: {}", e.into()),
-                )
-            })?;
-=======
+        ) -> std::result::Result<
+            tonic::Response<super::super::common::Status>,
+            tonic::Status,
+        > {
             self.inner
                 .ready()
                 .await
@@ -3336,35 +3192,27 @@ pub mod milvus_service_client {
                         format!("Service was not ready: {}", e.into()),
                     )
                 })?;
->>>>>>> c00d092 (update the proto file to the latest 2.5)
             let codec = tonic::codec::ProstCodec::default();
             let path = http::uri::PathAndQuery::from_static(
                 "/milvus.proto.milvus.MilvusService/LoadPartitions",
             );
             let mut req = request.into_request();
-            req.extensions_mut().insert(GrpcMethod::new(
-                "milvus.proto.milvus.MilvusService",
-                "LoadPartitions",
-            ));
+            req.extensions_mut()
+                .insert(
+                    GrpcMethod::new(
+                        "milvus.proto.milvus.MilvusService",
+                        "LoadPartitions",
+                    ),
+                );
             self.inner.unary(req, path, codec).await
         }
         pub async fn release_partitions(
             &mut self,
             request: impl tonic::IntoRequest<super::ReleasePartitionsRequest>,
-<<<<<<< HEAD
-        ) -> std::result::Result<tonic::Response<super::super::common::Status>, tonic::Status>
-        {
-=======
-        ) -> Result<tonic::Response<super::super::common::Status>, tonic::Status> {
-<<<<<<< HEAD
->>>>>>> d82a365 (format the code)
-            self.inner.ready().await.map_err(|e| {
-                tonic::Status::new(
-                    tonic::Code::Unknown,
-                    format!("Service was not ready: {}", e.into()),
-                )
-            })?;
-=======
+        ) -> std::result::Result<
+            tonic::Response<super::super::common::Status>,
+            tonic::Status,
+        > {
             self.inner
                 .ready()
                 .await
@@ -3374,38 +3222,24 @@ pub mod milvus_service_client {
                         format!("Service was not ready: {}", e.into()),
                     )
                 })?;
->>>>>>> c00d092 (update the proto file to the latest 2.5)
             let codec = tonic::codec::ProstCodec::default();
             let path = http::uri::PathAndQuery::from_static(
                 "/milvus.proto.milvus.MilvusService/ReleasePartitions",
             );
             let mut req = request.into_request();
-            req.extensions_mut().insert(GrpcMethod::new(
-                "milvus.proto.milvus.MilvusService",
-                "ReleasePartitions",
-            ));
+            req.extensions_mut()
+                .insert(
+                    GrpcMethod::new(
+                        "milvus.proto.milvus.MilvusService",
+                        "ReleasePartitions",
+                    ),
+                );
             self.inner.unary(req, path, codec).await
         }
         pub async fn get_partition_statistics(
             &mut self,
             request: impl tonic::IntoRequest<super::GetPartitionStatisticsRequest>,
-<<<<<<< HEAD
-<<<<<<< HEAD
         ) -> std::result::Result<
-            tonic::Response<super::GetPartitionStatisticsResponse>,
-            tonic::Status,
-        > {
-=======
-        ) -> Result<tonic::Response<super::GetPartitionStatisticsResponse>, tonic::Status> {
->>>>>>> d82a365 (format the code)
-            self.inner.ready().await.map_err(|e| {
-                tonic::Status::new(
-                    tonic::Code::Unknown,
-                    format!("Service was not ready: {}", e.into()),
-                )
-            })?;
-=======
-        ) -> Result<
             tonic::Response<super::GetPartitionStatisticsResponse>,
             tonic::Status,
         > {
@@ -3418,35 +3252,27 @@ pub mod milvus_service_client {
                         format!("Service was not ready: {}", e.into()),
                     )
                 })?;
->>>>>>> c00d092 (update the proto file to the latest 2.5)
             let codec = tonic::codec::ProstCodec::default();
             let path = http::uri::PathAndQuery::from_static(
                 "/milvus.proto.milvus.MilvusService/GetPartitionStatistics",
             );
             let mut req = request.into_request();
-            req.extensions_mut().insert(GrpcMethod::new(
-                "milvus.proto.milvus.MilvusService",
-                "GetPartitionStatistics",
-            ));
+            req.extensions_mut()
+                .insert(
+                    GrpcMethod::new(
+                        "milvus.proto.milvus.MilvusService",
+                        "GetPartitionStatistics",
+                    ),
+                );
             self.inner.unary(req, path, codec).await
         }
         pub async fn show_partitions(
             &mut self,
             request: impl tonic::IntoRequest<super::ShowPartitionsRequest>,
-<<<<<<< HEAD
-        ) -> std::result::Result<tonic::Response<super::ShowPartitionsResponse>, tonic::Status>
-        {
-=======
-        ) -> Result<tonic::Response<super::ShowPartitionsResponse>, tonic::Status> {
-<<<<<<< HEAD
->>>>>>> d82a365 (format the code)
-            self.inner.ready().await.map_err(|e| {
-                tonic::Status::new(
-                    tonic::Code::Unknown,
-                    format!("Service was not ready: {}", e.into()),
-                )
-            })?;
-=======
+        ) -> std::result::Result<
+            tonic::Response<super::ShowPartitionsResponse>,
+            tonic::Status,
+        > {
             self.inner
                 .ready()
                 .await
@@ -3456,35 +3282,27 @@ pub mod milvus_service_client {
                         format!("Service was not ready: {}", e.into()),
                     )
                 })?;
->>>>>>> c00d092 (update the proto file to the latest 2.5)
             let codec = tonic::codec::ProstCodec::default();
             let path = http::uri::PathAndQuery::from_static(
                 "/milvus.proto.milvus.MilvusService/ShowPartitions",
             );
             let mut req = request.into_request();
-            req.extensions_mut().insert(GrpcMethod::new(
-                "milvus.proto.milvus.MilvusService",
-                "ShowPartitions",
-            ));
+            req.extensions_mut()
+                .insert(
+                    GrpcMethod::new(
+                        "milvus.proto.milvus.MilvusService",
+                        "ShowPartitions",
+                    ),
+                );
             self.inner.unary(req, path, codec).await
         }
         pub async fn get_loading_progress(
             &mut self,
             request: impl tonic::IntoRequest<super::GetLoadingProgressRequest>,
-<<<<<<< HEAD
-        ) -> std::result::Result<tonic::Response<super::GetLoadingProgressResponse>, tonic::Status>
-        {
-=======
-        ) -> Result<tonic::Response<super::GetLoadingProgressResponse>, tonic::Status> {
-<<<<<<< HEAD
->>>>>>> d82a365 (format the code)
-            self.inner.ready().await.map_err(|e| {
-                tonic::Status::new(
-                    tonic::Code::Unknown,
-                    format!("Service was not ready: {}", e.into()),
-                )
-            })?;
-=======
+        ) -> std::result::Result<
+            tonic::Response<super::GetLoadingProgressResponse>,
+            tonic::Status,
+        > {
             self.inner
                 .ready()
                 .await
@@ -3494,35 +3312,27 @@ pub mod milvus_service_client {
                         format!("Service was not ready: {}", e.into()),
                     )
                 })?;
->>>>>>> c00d092 (update the proto file to the latest 2.5)
             let codec = tonic::codec::ProstCodec::default();
             let path = http::uri::PathAndQuery::from_static(
                 "/milvus.proto.milvus.MilvusService/GetLoadingProgress",
             );
             let mut req = request.into_request();
-            req.extensions_mut().insert(GrpcMethod::new(
-                "milvus.proto.milvus.MilvusService",
-                "GetLoadingProgress",
-            ));
+            req.extensions_mut()
+                .insert(
+                    GrpcMethod::new(
+                        "milvus.proto.milvus.MilvusService",
+                        "GetLoadingProgress",
+                    ),
+                );
             self.inner.unary(req, path, codec).await
         }
         pub async fn get_load_state(
             &mut self,
             request: impl tonic::IntoRequest<super::GetLoadStateRequest>,
-<<<<<<< HEAD
-        ) -> std::result::Result<tonic::Response<super::GetLoadStateResponse>, tonic::Status>
-        {
-=======
-        ) -> Result<tonic::Response<super::GetLoadStateResponse>, tonic::Status> {
-<<<<<<< HEAD
->>>>>>> d82a365 (format the code)
-            self.inner.ready().await.map_err(|e| {
-                tonic::Status::new(
-                    tonic::Code::Unknown,
-                    format!("Service was not ready: {}", e.into()),
-                )
-            })?;
-=======
+        ) -> std::result::Result<
+            tonic::Response<super::GetLoadStateResponse>,
+            tonic::Status,
+        > {
             self.inner
                 .ready()
                 .await
@@ -3532,35 +3342,24 @@ pub mod milvus_service_client {
                         format!("Service was not ready: {}", e.into()),
                     )
                 })?;
->>>>>>> c00d092 (update the proto file to the latest 2.5)
             let codec = tonic::codec::ProstCodec::default();
             let path = http::uri::PathAndQuery::from_static(
                 "/milvus.proto.milvus.MilvusService/GetLoadState",
             );
             let mut req = request.into_request();
-            req.extensions_mut().insert(GrpcMethod::new(
-                "milvus.proto.milvus.MilvusService",
-                "GetLoadState",
-            ));
+            req.extensions_mut()
+                .insert(
+                    GrpcMethod::new("milvus.proto.milvus.MilvusService", "GetLoadState"),
+                );
             self.inner.unary(req, path, codec).await
         }
         pub async fn create_alias(
             &mut self,
             request: impl tonic::IntoRequest<super::CreateAliasRequest>,
-<<<<<<< HEAD
-        ) -> std::result::Result<tonic::Response<super::super::common::Status>, tonic::Status>
-        {
-=======
-        ) -> Result<tonic::Response<super::super::common::Status>, tonic::Status> {
-<<<<<<< HEAD
->>>>>>> d82a365 (format the code)
-            self.inner.ready().await.map_err(|e| {
-                tonic::Status::new(
-                    tonic::Code::Unknown,
-                    format!("Service was not ready: {}", e.into()),
-                )
-            })?;
-=======
+        ) -> std::result::Result<
+            tonic::Response<super::super::common::Status>,
+            tonic::Status,
+        > {
             self.inner
                 .ready()
                 .await
@@ -3570,35 +3369,24 @@ pub mod milvus_service_client {
                         format!("Service was not ready: {}", e.into()),
                     )
                 })?;
->>>>>>> c00d092 (update the proto file to the latest 2.5)
             let codec = tonic::codec::ProstCodec::default();
             let path = http::uri::PathAndQuery::from_static(
                 "/milvus.proto.milvus.MilvusService/CreateAlias",
             );
             let mut req = request.into_request();
-            req.extensions_mut().insert(GrpcMethod::new(
-                "milvus.proto.milvus.MilvusService",
-                "CreateAlias",
-            ));
+            req.extensions_mut()
+                .insert(
+                    GrpcMethod::new("milvus.proto.milvus.MilvusService", "CreateAlias"),
+                );
             self.inner.unary(req, path, codec).await
         }
         pub async fn drop_alias(
             &mut self,
             request: impl tonic::IntoRequest<super::DropAliasRequest>,
-<<<<<<< HEAD
-        ) -> std::result::Result<tonic::Response<super::super::common::Status>, tonic::Status>
-        {
-=======
-        ) -> Result<tonic::Response<super::super::common::Status>, tonic::Status> {
-<<<<<<< HEAD
->>>>>>> d82a365 (format the code)
-            self.inner.ready().await.map_err(|e| {
-                tonic::Status::new(
-                    tonic::Code::Unknown,
-                    format!("Service was not ready: {}", e.into()),
-                )
-            })?;
-=======
+        ) -> std::result::Result<
+            tonic::Response<super::super::common::Status>,
+            tonic::Status,
+        > {
             self.inner
                 .ready()
                 .await
@@ -3608,35 +3396,24 @@ pub mod milvus_service_client {
                         format!("Service was not ready: {}", e.into()),
                     )
                 })?;
->>>>>>> c00d092 (update the proto file to the latest 2.5)
             let codec = tonic::codec::ProstCodec::default();
             let path = http::uri::PathAndQuery::from_static(
                 "/milvus.proto.milvus.MilvusService/DropAlias",
             );
             let mut req = request.into_request();
-            req.extensions_mut().insert(GrpcMethod::new(
-                "milvus.proto.milvus.MilvusService",
-                "DropAlias",
-            ));
+            req.extensions_mut()
+                .insert(
+                    GrpcMethod::new("milvus.proto.milvus.MilvusService", "DropAlias"),
+                );
             self.inner.unary(req, path, codec).await
         }
         pub async fn alter_alias(
             &mut self,
             request: impl tonic::IntoRequest<super::AlterAliasRequest>,
-<<<<<<< HEAD
-        ) -> std::result::Result<tonic::Response<super::super::common::Status>, tonic::Status>
-        {
-=======
-        ) -> Result<tonic::Response<super::super::common::Status>, tonic::Status> {
-<<<<<<< HEAD
->>>>>>> d82a365 (format the code)
-            self.inner.ready().await.map_err(|e| {
-                tonic::Status::new(
-                    tonic::Code::Unknown,
-                    format!("Service was not ready: {}", e.into()),
-                )
-            })?;
-=======
+        ) -> std::result::Result<
+            tonic::Response<super::super::common::Status>,
+            tonic::Status,
+        > {
             self.inner
                 .ready()
                 .await
@@ -3646,35 +3423,24 @@ pub mod milvus_service_client {
                         format!("Service was not ready: {}", e.into()),
                     )
                 })?;
->>>>>>> c00d092 (update the proto file to the latest 2.5)
             let codec = tonic::codec::ProstCodec::default();
             let path = http::uri::PathAndQuery::from_static(
                 "/milvus.proto.milvus.MilvusService/AlterAlias",
             );
             let mut req = request.into_request();
-            req.extensions_mut().insert(GrpcMethod::new(
-                "milvus.proto.milvus.MilvusService",
-                "AlterAlias",
-            ));
+            req.extensions_mut()
+                .insert(
+                    GrpcMethod::new("milvus.proto.milvus.MilvusService", "AlterAlias"),
+                );
             self.inner.unary(req, path, codec).await
         }
         pub async fn describe_alias(
             &mut self,
             request: impl tonic::IntoRequest<super::DescribeAliasRequest>,
-<<<<<<< HEAD
-        ) -> std::result::Result<tonic::Response<super::DescribeAliasResponse>, tonic::Status>
-        {
-=======
-        ) -> Result<tonic::Response<super::DescribeAliasResponse>, tonic::Status> {
-<<<<<<< HEAD
->>>>>>> d82a365 (format the code)
-            self.inner.ready().await.map_err(|e| {
-                tonic::Status::new(
-                    tonic::Code::Unknown,
-                    format!("Service was not ready: {}", e.into()),
-                )
-            })?;
-=======
+        ) -> std::result::Result<
+            tonic::Response<super::DescribeAliasResponse>,
+            tonic::Status,
+        > {
             self.inner
                 .ready()
                 .await
@@ -3684,35 +3450,24 @@ pub mod milvus_service_client {
                         format!("Service was not ready: {}", e.into()),
                     )
                 })?;
->>>>>>> c00d092 (update the proto file to the latest 2.5)
             let codec = tonic::codec::ProstCodec::default();
             let path = http::uri::PathAndQuery::from_static(
                 "/milvus.proto.milvus.MilvusService/DescribeAlias",
             );
             let mut req = request.into_request();
-            req.extensions_mut().insert(GrpcMethod::new(
-                "milvus.proto.milvus.MilvusService",
-                "DescribeAlias",
-            ));
+            req.extensions_mut()
+                .insert(
+                    GrpcMethod::new("milvus.proto.milvus.MilvusService", "DescribeAlias"),
+                );
             self.inner.unary(req, path, codec).await
         }
         pub async fn list_aliases(
             &mut self,
             request: impl tonic::IntoRequest<super::ListAliasesRequest>,
-<<<<<<< HEAD
-        ) -> std::result::Result<tonic::Response<super::ListAliasesResponse>, tonic::Status>
-        {
-=======
-        ) -> Result<tonic::Response<super::ListAliasesResponse>, tonic::Status> {
-<<<<<<< HEAD
->>>>>>> d82a365 (format the code)
-            self.inner.ready().await.map_err(|e| {
-                tonic::Status::new(
-                    tonic::Code::Unknown,
-                    format!("Service was not ready: {}", e.into()),
-                )
-            })?;
-=======
+        ) -> std::result::Result<
+            tonic::Response<super::ListAliasesResponse>,
+            tonic::Status,
+        > {
             self.inner
                 .ready()
                 .await
@@ -3722,35 +3477,24 @@ pub mod milvus_service_client {
                         format!("Service was not ready: {}", e.into()),
                     )
                 })?;
->>>>>>> c00d092 (update the proto file to the latest 2.5)
             let codec = tonic::codec::ProstCodec::default();
             let path = http::uri::PathAndQuery::from_static(
                 "/milvus.proto.milvus.MilvusService/ListAliases",
             );
             let mut req = request.into_request();
-            req.extensions_mut().insert(GrpcMethod::new(
-                "milvus.proto.milvus.MilvusService",
-                "ListAliases",
-            ));
+            req.extensions_mut()
+                .insert(
+                    GrpcMethod::new("milvus.proto.milvus.MilvusService", "ListAliases"),
+                );
             self.inner.unary(req, path, codec).await
         }
         pub async fn create_index(
             &mut self,
             request: impl tonic::IntoRequest<super::CreateIndexRequest>,
-<<<<<<< HEAD
-        ) -> std::result::Result<tonic::Response<super::super::common::Status>, tonic::Status>
-        {
-=======
-        ) -> Result<tonic::Response<super::super::common::Status>, tonic::Status> {
-<<<<<<< HEAD
->>>>>>> d82a365 (format the code)
-            self.inner.ready().await.map_err(|e| {
-                tonic::Status::new(
-                    tonic::Code::Unknown,
-                    format!("Service was not ready: {}", e.into()),
-                )
-            })?;
-=======
+        ) -> std::result::Result<
+            tonic::Response<super::super::common::Status>,
+            tonic::Status,
+        > {
             self.inner
                 .ready()
                 .await
@@ -3760,35 +3504,24 @@ pub mod milvus_service_client {
                         format!("Service was not ready: {}", e.into()),
                     )
                 })?;
->>>>>>> c00d092 (update the proto file to the latest 2.5)
             let codec = tonic::codec::ProstCodec::default();
             let path = http::uri::PathAndQuery::from_static(
                 "/milvus.proto.milvus.MilvusService/CreateIndex",
             );
             let mut req = request.into_request();
-            req.extensions_mut().insert(GrpcMethod::new(
-                "milvus.proto.milvus.MilvusService",
-                "CreateIndex",
-            ));
+            req.extensions_mut()
+                .insert(
+                    GrpcMethod::new("milvus.proto.milvus.MilvusService", "CreateIndex"),
+                );
             self.inner.unary(req, path, codec).await
         }
         pub async fn alter_index(
             &mut self,
             request: impl tonic::IntoRequest<super::AlterIndexRequest>,
-<<<<<<< HEAD
-        ) -> std::result::Result<tonic::Response<super::super::common::Status>, tonic::Status>
-        {
-=======
-        ) -> Result<tonic::Response<super::super::common::Status>, tonic::Status> {
-<<<<<<< HEAD
->>>>>>> d82a365 (format the code)
-            self.inner.ready().await.map_err(|e| {
-                tonic::Status::new(
-                    tonic::Code::Unknown,
-                    format!("Service was not ready: {}", e.into()),
-                )
-            })?;
-=======
+        ) -> std::result::Result<
+            tonic::Response<super::super::common::Status>,
+            tonic::Status,
+        > {
             self.inner
                 .ready()
                 .await
@@ -3798,35 +3531,24 @@ pub mod milvus_service_client {
                         format!("Service was not ready: {}", e.into()),
                     )
                 })?;
->>>>>>> c00d092 (update the proto file to the latest 2.5)
             let codec = tonic::codec::ProstCodec::default();
             let path = http::uri::PathAndQuery::from_static(
                 "/milvus.proto.milvus.MilvusService/AlterIndex",
             );
             let mut req = request.into_request();
-            req.extensions_mut().insert(GrpcMethod::new(
-                "milvus.proto.milvus.MilvusService",
-                "AlterIndex",
-            ));
+            req.extensions_mut()
+                .insert(
+                    GrpcMethod::new("milvus.proto.milvus.MilvusService", "AlterIndex"),
+                );
             self.inner.unary(req, path, codec).await
         }
         pub async fn describe_index(
             &mut self,
             request: impl tonic::IntoRequest<super::DescribeIndexRequest>,
-<<<<<<< HEAD
-        ) -> std::result::Result<tonic::Response<super::DescribeIndexResponse>, tonic::Status>
-        {
-=======
-        ) -> Result<tonic::Response<super::DescribeIndexResponse>, tonic::Status> {
-<<<<<<< HEAD
->>>>>>> d82a365 (format the code)
-            self.inner.ready().await.map_err(|e| {
-                tonic::Status::new(
-                    tonic::Code::Unknown,
-                    format!("Service was not ready: {}", e.into()),
-                )
-            })?;
-=======
+        ) -> std::result::Result<
+            tonic::Response<super::DescribeIndexResponse>,
+            tonic::Status,
+        > {
             self.inner
                 .ready()
                 .await
@@ -3836,35 +3558,24 @@ pub mod milvus_service_client {
                         format!("Service was not ready: {}", e.into()),
                     )
                 })?;
->>>>>>> c00d092 (update the proto file to the latest 2.5)
             let codec = tonic::codec::ProstCodec::default();
             let path = http::uri::PathAndQuery::from_static(
                 "/milvus.proto.milvus.MilvusService/DescribeIndex",
             );
             let mut req = request.into_request();
-            req.extensions_mut().insert(GrpcMethod::new(
-                "milvus.proto.milvus.MilvusService",
-                "DescribeIndex",
-            ));
+            req.extensions_mut()
+                .insert(
+                    GrpcMethod::new("milvus.proto.milvus.MilvusService", "DescribeIndex"),
+                );
             self.inner.unary(req, path, codec).await
         }
         pub async fn get_index_statistics(
             &mut self,
             request: impl tonic::IntoRequest<super::GetIndexStatisticsRequest>,
-<<<<<<< HEAD
-        ) -> std::result::Result<tonic::Response<super::GetIndexStatisticsResponse>, tonic::Status>
-        {
-=======
-        ) -> Result<tonic::Response<super::GetIndexStatisticsResponse>, tonic::Status> {
-<<<<<<< HEAD
->>>>>>> d82a365 (format the code)
-            self.inner.ready().await.map_err(|e| {
-                tonic::Status::new(
-                    tonic::Code::Unknown,
-                    format!("Service was not ready: {}", e.into()),
-                )
-            })?;
-=======
+        ) -> std::result::Result<
+            tonic::Response<super::GetIndexStatisticsResponse>,
+            tonic::Status,
+        > {
             self.inner
                 .ready()
                 .await
@@ -3874,36 +3585,28 @@ pub mod milvus_service_client {
                         format!("Service was not ready: {}", e.into()),
                     )
                 })?;
->>>>>>> c00d092 (update the proto file to the latest 2.5)
             let codec = tonic::codec::ProstCodec::default();
             let path = http::uri::PathAndQuery::from_static(
                 "/milvus.proto.milvus.MilvusService/GetIndexStatistics",
             );
             let mut req = request.into_request();
-            req.extensions_mut().insert(GrpcMethod::new(
-                "milvus.proto.milvus.MilvusService",
-                "GetIndexStatistics",
-            ));
+            req.extensions_mut()
+                .insert(
+                    GrpcMethod::new(
+                        "milvus.proto.milvus.MilvusService",
+                        "GetIndexStatistics",
+                    ),
+                );
             self.inner.unary(req, path, codec).await
         }
         /// Deprecated: use DescribeIndex instead
         pub async fn get_index_state(
             &mut self,
             request: impl tonic::IntoRequest<super::GetIndexStateRequest>,
-<<<<<<< HEAD
-        ) -> std::result::Result<tonic::Response<super::GetIndexStateResponse>, tonic::Status>
-        {
-=======
-        ) -> Result<tonic::Response<super::GetIndexStateResponse>, tonic::Status> {
-<<<<<<< HEAD
->>>>>>> d82a365 (format the code)
-            self.inner.ready().await.map_err(|e| {
-                tonic::Status::new(
-                    tonic::Code::Unknown,
-                    format!("Service was not ready: {}", e.into()),
-                )
-            })?;
-=======
+        ) -> std::result::Result<
+            tonic::Response<super::GetIndexStateResponse>,
+            tonic::Status,
+        > {
             self.inner
                 .ready()
                 .await
@@ -3913,37 +3616,22 @@ pub mod milvus_service_client {
                         format!("Service was not ready: {}", e.into()),
                     )
                 })?;
->>>>>>> c00d092 (update the proto file to the latest 2.5)
             let codec = tonic::codec::ProstCodec::default();
             let path = http::uri::PathAndQuery::from_static(
                 "/milvus.proto.milvus.MilvusService/GetIndexState",
             );
             let mut req = request.into_request();
-            req.extensions_mut().insert(GrpcMethod::new(
-                "milvus.proto.milvus.MilvusService",
-                "GetIndexState",
-            ));
+            req.extensions_mut()
+                .insert(
+                    GrpcMethod::new("milvus.proto.milvus.MilvusService", "GetIndexState"),
+                );
             self.inner.unary(req, path, codec).await
         }
         /// Deprecated: use DescribeIndex instead
         pub async fn get_index_build_progress(
             &mut self,
             request: impl tonic::IntoRequest<super::GetIndexBuildProgressRequest>,
-<<<<<<< HEAD
-<<<<<<< HEAD
-        ) -> std::result::Result<tonic::Response<super::GetIndexBuildProgressResponse>, tonic::Status>
-        {
-=======
-        ) -> Result<tonic::Response<super::GetIndexBuildProgressResponse>, tonic::Status> {
->>>>>>> d82a365 (format the code)
-            self.inner.ready().await.map_err(|e| {
-                tonic::Status::new(
-                    tonic::Code::Unknown,
-                    format!("Service was not ready: {}", e.into()),
-                )
-            })?;
-=======
-        ) -> Result<
+        ) -> std::result::Result<
             tonic::Response<super::GetIndexBuildProgressResponse>,
             tonic::Status,
         > {
@@ -3956,35 +3644,27 @@ pub mod milvus_service_client {
                         format!("Service was not ready: {}", e.into()),
                     )
                 })?;
->>>>>>> c00d092 (update the proto file to the latest 2.5)
             let codec = tonic::codec::ProstCodec::default();
             let path = http::uri::PathAndQuery::from_static(
                 "/milvus.proto.milvus.MilvusService/GetIndexBuildProgress",
             );
             let mut req = request.into_request();
-            req.extensions_mut().insert(GrpcMethod::new(
-                "milvus.proto.milvus.MilvusService",
-                "GetIndexBuildProgress",
-            ));
+            req.extensions_mut()
+                .insert(
+                    GrpcMethod::new(
+                        "milvus.proto.milvus.MilvusService",
+                        "GetIndexBuildProgress",
+                    ),
+                );
             self.inner.unary(req, path, codec).await
         }
         pub async fn drop_index(
             &mut self,
             request: impl tonic::IntoRequest<super::DropIndexRequest>,
-<<<<<<< HEAD
-        ) -> std::result::Result<tonic::Response<super::super::common::Status>, tonic::Status>
-        {
-=======
-        ) -> Result<tonic::Response<super::super::common::Status>, tonic::Status> {
-<<<<<<< HEAD
->>>>>>> d82a365 (format the code)
-            self.inner.ready().await.map_err(|e| {
-                tonic::Status::new(
-                    tonic::Code::Unknown,
-                    format!("Service was not ready: {}", e.into()),
-                )
-            })?;
-=======
+        ) -> std::result::Result<
+            tonic::Response<super::super::common::Status>,
+            tonic::Status,
+        > {
             self.inner
                 .ready()
                 .await
@@ -3994,45 +3674,21 @@ pub mod milvus_service_client {
                         format!("Service was not ready: {}", e.into()),
                     )
                 })?;
->>>>>>> c00d092 (update the proto file to the latest 2.5)
             let codec = tonic::codec::ProstCodec::default();
             let path = http::uri::PathAndQuery::from_static(
                 "/milvus.proto.milvus.MilvusService/DropIndex",
             );
             let mut req = request.into_request();
-            req.extensions_mut().insert(GrpcMethod::new(
-                "milvus.proto.milvus.MilvusService",
-                "DropIndex",
-            ));
+            req.extensions_mut()
+                .insert(
+                    GrpcMethod::new("milvus.proto.milvus.MilvusService", "DropIndex"),
+                );
             self.inner.unary(req, path, codec).await
         }
         pub async fn insert(
             &mut self,
             request: impl tonic::IntoRequest<super::InsertRequest>,
-<<<<<<< HEAD
         ) -> std::result::Result<tonic::Response<super::MutationResult>, tonic::Status> {
-=======
-        ) -> Result<tonic::Response<super::MutationResult>, tonic::Status> {
-<<<<<<< HEAD
->>>>>>> d82a365 (format the code)
-            self.inner.ready().await.map_err(|e| {
-                tonic::Status::new(
-                    tonic::Code::Unknown,
-                    format!("Service was not ready: {}", e.into()),
-                )
-            })?;
-            let codec = tonic::codec::ProstCodec::default();
-            let path =
-                http::uri::PathAndQuery::from_static("/milvus.proto.milvus.MilvusService/Insert");
-<<<<<<< HEAD
-            let mut req = request.into_request();
-            req.extensions_mut().insert(GrpcMethod::new(
-                "milvus.proto.milvus.MilvusService",
-                "Insert",
-            ));
-            self.inner.unary(req, path, codec).await
-=======
-=======
             self.inner
                 .ready()
                 .await
@@ -4046,37 +3702,15 @@ pub mod milvus_service_client {
             let path = http::uri::PathAndQuery::from_static(
                 "/milvus.proto.milvus.MilvusService/Insert",
             );
->>>>>>> c00d092 (update the proto file to the latest 2.5)
-            self.inner.unary(request.into_request(), path, codec).await
->>>>>>> d82a365 (format the code)
+            let mut req = request.into_request();
+            req.extensions_mut()
+                .insert(GrpcMethod::new("milvus.proto.milvus.MilvusService", "Insert"));
+            self.inner.unary(req, path, codec).await
         }
         pub async fn delete(
             &mut self,
             request: impl tonic::IntoRequest<super::DeleteRequest>,
-<<<<<<< HEAD
         ) -> std::result::Result<tonic::Response<super::MutationResult>, tonic::Status> {
-=======
-        ) -> Result<tonic::Response<super::MutationResult>, tonic::Status> {
-<<<<<<< HEAD
->>>>>>> d82a365 (format the code)
-            self.inner.ready().await.map_err(|e| {
-                tonic::Status::new(
-                    tonic::Code::Unknown,
-                    format!("Service was not ready: {}", e.into()),
-                )
-            })?;
-            let codec = tonic::codec::ProstCodec::default();
-            let path =
-                http::uri::PathAndQuery::from_static("/milvus.proto.milvus.MilvusService/Delete");
-<<<<<<< HEAD
-            let mut req = request.into_request();
-            req.extensions_mut().insert(GrpcMethod::new(
-                "milvus.proto.milvus.MilvusService",
-                "Delete",
-            ));
-            self.inner.unary(req, path, codec).await
-=======
-=======
             self.inner
                 .ready()
                 .await
@@ -4090,37 +3724,15 @@ pub mod milvus_service_client {
             let path = http::uri::PathAndQuery::from_static(
                 "/milvus.proto.milvus.MilvusService/Delete",
             );
->>>>>>> c00d092 (update the proto file to the latest 2.5)
-            self.inner.unary(request.into_request(), path, codec).await
->>>>>>> d82a365 (format the code)
+            let mut req = request.into_request();
+            req.extensions_mut()
+                .insert(GrpcMethod::new("milvus.proto.milvus.MilvusService", "Delete"));
+            self.inner.unary(req, path, codec).await
         }
         pub async fn upsert(
             &mut self,
             request: impl tonic::IntoRequest<super::UpsertRequest>,
-<<<<<<< HEAD
         ) -> std::result::Result<tonic::Response<super::MutationResult>, tonic::Status> {
-=======
-        ) -> Result<tonic::Response<super::MutationResult>, tonic::Status> {
-<<<<<<< HEAD
->>>>>>> d82a365 (format the code)
-            self.inner.ready().await.map_err(|e| {
-                tonic::Status::new(
-                    tonic::Code::Unknown,
-                    format!("Service was not ready: {}", e.into()),
-                )
-            })?;
-            let codec = tonic::codec::ProstCodec::default();
-            let path =
-                http::uri::PathAndQuery::from_static("/milvus.proto.milvus.MilvusService/Upsert");
-<<<<<<< HEAD
-            let mut req = request.into_request();
-            req.extensions_mut().insert(GrpcMethod::new(
-                "milvus.proto.milvus.MilvusService",
-                "Upsert",
-            ));
-            self.inner.unary(req, path, codec).await
-=======
-=======
             self.inner
                 .ready()
                 .await
@@ -4134,37 +3746,15 @@ pub mod milvus_service_client {
             let path = http::uri::PathAndQuery::from_static(
                 "/milvus.proto.milvus.MilvusService/Upsert",
             );
->>>>>>> c00d092 (update the proto file to the latest 2.5)
-            self.inner.unary(request.into_request(), path, codec).await
->>>>>>> d82a365 (format the code)
+            let mut req = request.into_request();
+            req.extensions_mut()
+                .insert(GrpcMethod::new("milvus.proto.milvus.MilvusService", "Upsert"));
+            self.inner.unary(req, path, codec).await
         }
         pub async fn search(
             &mut self,
             request: impl tonic::IntoRequest<super::SearchRequest>,
-<<<<<<< HEAD
         ) -> std::result::Result<tonic::Response<super::SearchResults>, tonic::Status> {
-=======
-        ) -> Result<tonic::Response<super::SearchResults>, tonic::Status> {
-<<<<<<< HEAD
->>>>>>> d82a365 (format the code)
-            self.inner.ready().await.map_err(|e| {
-                tonic::Status::new(
-                    tonic::Code::Unknown,
-                    format!("Service was not ready: {}", e.into()),
-                )
-            })?;
-            let codec = tonic::codec::ProstCodec::default();
-            let path =
-                http::uri::PathAndQuery::from_static("/milvus.proto.milvus.MilvusService/Search");
-<<<<<<< HEAD
-            let mut req = request.into_request();
-            req.extensions_mut().insert(GrpcMethod::new(
-                "milvus.proto.milvus.MilvusService",
-                "Search",
-            ));
-            self.inner.unary(req, path, codec).await
-=======
-=======
             self.inner
                 .ready()
                 .await
@@ -4178,26 +3768,15 @@ pub mod milvus_service_client {
             let path = http::uri::PathAndQuery::from_static(
                 "/milvus.proto.milvus.MilvusService/Search",
             );
->>>>>>> c00d092 (update the proto file to the latest 2.5)
-            self.inner.unary(request.into_request(), path, codec).await
->>>>>>> d82a365 (format the code)
+            let mut req = request.into_request();
+            req.extensions_mut()
+                .insert(GrpcMethod::new("milvus.proto.milvus.MilvusService", "Search"));
+            self.inner.unary(req, path, codec).await
         }
         pub async fn hybrid_search(
             &mut self,
             request: impl tonic::IntoRequest<super::HybridSearchRequest>,
-<<<<<<< HEAD
         ) -> std::result::Result<tonic::Response<super::SearchResults>, tonic::Status> {
-=======
-        ) -> Result<tonic::Response<super::SearchResults>, tonic::Status> {
-<<<<<<< HEAD
->>>>>>> d82a365 (format the code)
-            self.inner.ready().await.map_err(|e| {
-                tonic::Status::new(
-                    tonic::Code::Unknown,
-                    format!("Service was not ready: {}", e.into()),
-                )
-            })?;
-=======
             self.inner
                 .ready()
                 .await
@@ -4207,45 +3786,21 @@ pub mod milvus_service_client {
                         format!("Service was not ready: {}", e.into()),
                     )
                 })?;
->>>>>>> c00d092 (update the proto file to the latest 2.5)
             let codec = tonic::codec::ProstCodec::default();
             let path = http::uri::PathAndQuery::from_static(
                 "/milvus.proto.milvus.MilvusService/HybridSearch",
             );
             let mut req = request.into_request();
-            req.extensions_mut().insert(GrpcMethod::new(
-                "milvus.proto.milvus.MilvusService",
-                "HybridSearch",
-            ));
+            req.extensions_mut()
+                .insert(
+                    GrpcMethod::new("milvus.proto.milvus.MilvusService", "HybridSearch"),
+                );
             self.inner.unary(req, path, codec).await
         }
         pub async fn flush(
             &mut self,
             request: impl tonic::IntoRequest<super::FlushRequest>,
-<<<<<<< HEAD
         ) -> std::result::Result<tonic::Response<super::FlushResponse>, tonic::Status> {
-=======
-        ) -> Result<tonic::Response<super::FlushResponse>, tonic::Status> {
-<<<<<<< HEAD
->>>>>>> d82a365 (format the code)
-            self.inner.ready().await.map_err(|e| {
-                tonic::Status::new(
-                    tonic::Code::Unknown,
-                    format!("Service was not ready: {}", e.into()),
-                )
-            })?;
-            let codec = tonic::codec::ProstCodec::default();
-            let path =
-                http::uri::PathAndQuery::from_static("/milvus.proto.milvus.MilvusService/Flush");
-<<<<<<< HEAD
-            let mut req = request.into_request();
-            req.extensions_mut().insert(GrpcMethod::new(
-                "milvus.proto.milvus.MilvusService",
-                "Flush",
-            ));
-            self.inner.unary(req, path, codec).await
-=======
-=======
             self.inner
                 .ready()
                 .await
@@ -4259,37 +3814,15 @@ pub mod milvus_service_client {
             let path = http::uri::PathAndQuery::from_static(
                 "/milvus.proto.milvus.MilvusService/Flush",
             );
->>>>>>> c00d092 (update the proto file to the latest 2.5)
-            self.inner.unary(request.into_request(), path, codec).await
->>>>>>> d82a365 (format the code)
+            let mut req = request.into_request();
+            req.extensions_mut()
+                .insert(GrpcMethod::new("milvus.proto.milvus.MilvusService", "Flush"));
+            self.inner.unary(req, path, codec).await
         }
         pub async fn query(
             &mut self,
             request: impl tonic::IntoRequest<super::QueryRequest>,
-<<<<<<< HEAD
         ) -> std::result::Result<tonic::Response<super::QueryResults>, tonic::Status> {
-=======
-        ) -> Result<tonic::Response<super::QueryResults>, tonic::Status> {
-<<<<<<< HEAD
->>>>>>> d82a365 (format the code)
-            self.inner.ready().await.map_err(|e| {
-                tonic::Status::new(
-                    tonic::Code::Unknown,
-                    format!("Service was not ready: {}", e.into()),
-                )
-            })?;
-            let codec = tonic::codec::ProstCodec::default();
-            let path =
-                http::uri::PathAndQuery::from_static("/milvus.proto.milvus.MilvusService/Query");
-<<<<<<< HEAD
-            let mut req = request.into_request();
-            req.extensions_mut().insert(GrpcMethod::new(
-                "milvus.proto.milvus.MilvusService",
-                "Query",
-            ));
-            self.inner.unary(req, path, codec).await
-=======
-=======
             self.inner
                 .ready()
                 .await
@@ -4303,27 +3836,18 @@ pub mod milvus_service_client {
             let path = http::uri::PathAndQuery::from_static(
                 "/milvus.proto.milvus.MilvusService/Query",
             );
->>>>>>> c00d092 (update the proto file to the latest 2.5)
-            self.inner.unary(request.into_request(), path, codec).await
->>>>>>> d82a365 (format the code)
+            let mut req = request.into_request();
+            req.extensions_mut()
+                .insert(GrpcMethod::new("milvus.proto.milvus.MilvusService", "Query"));
+            self.inner.unary(req, path, codec).await
         }
         pub async fn calc_distance(
             &mut self,
             request: impl tonic::IntoRequest<super::CalcDistanceRequest>,
-<<<<<<< HEAD
-        ) -> std::result::Result<tonic::Response<super::CalcDistanceResults>, tonic::Status>
-        {
-=======
-        ) -> Result<tonic::Response<super::CalcDistanceResults>, tonic::Status> {
-<<<<<<< HEAD
->>>>>>> d82a365 (format the code)
-            self.inner.ready().await.map_err(|e| {
-                tonic::Status::new(
-                    tonic::Code::Unknown,
-                    format!("Service was not ready: {}", e.into()),
-                )
-            })?;
-=======
+        ) -> std::result::Result<
+            tonic::Response<super::CalcDistanceResults>,
+            tonic::Status,
+        > {
             self.inner
                 .ready()
                 .await
@@ -4333,57 +3857,24 @@ pub mod milvus_service_client {
                         format!("Service was not ready: {}", e.into()),
                     )
                 })?;
->>>>>>> c00d092 (update the proto file to the latest 2.5)
             let codec = tonic::codec::ProstCodec::default();
             let path = http::uri::PathAndQuery::from_static(
                 "/milvus.proto.milvus.MilvusService/CalcDistance",
             );
             let mut req = request.into_request();
-            req.extensions_mut().insert(GrpcMethod::new(
-                "milvus.proto.milvus.MilvusService",
-                "CalcDistance",
-            ));
+            req.extensions_mut()
+                .insert(
+                    GrpcMethod::new("milvus.proto.milvus.MilvusService", "CalcDistance"),
+                );
             self.inner.unary(req, path, codec).await
         }
         pub async fn flush_all(
             &mut self,
             request: impl tonic::IntoRequest<super::FlushAllRequest>,
-<<<<<<< HEAD
-        ) -> std::result::Result<tonic::Response<super::FlushAllResponse>, tonic::Status> {
-=======
-        ) -> Result<tonic::Response<super::FlushAllResponse>, tonic::Status> {
-<<<<<<< HEAD
->>>>>>> d82a365 (format the code)
-            self.inner.ready().await.map_err(|e| {
-                tonic::Status::new(
-                    tonic::Code::Unknown,
-                    format!("Service was not ready: {}", e.into()),
-                )
-            })?;
-            let codec = tonic::codec::ProstCodec::default();
-            let path =
-                http::uri::PathAndQuery::from_static("/milvus.proto.milvus.MilvusService/FlushAll");
-<<<<<<< HEAD
-            let mut req = request.into_request();
-            req.extensions_mut().insert(GrpcMethod::new(
-                "milvus.proto.milvus.MilvusService",
-                "FlushAll",
-            ));
-            self.inner.unary(req, path, codec).await
-=======
-            self.inner.unary(request.into_request(), path, codec).await
-        }
-        pub async fn add_collection_field(
-            &mut self,
-            request: impl tonic::IntoRequest<super::AddCollectionFieldRequest>,
-        ) -> Result<tonic::Response<super::super::common::Status>, tonic::Status> {
-            self.inner.ready().await.map_err(|e| {
-                tonic::Status::new(
-                    tonic::Code::Unknown,
-                    format!("Service was not ready: {}", e.into()),
-                )
-            })?;
-=======
+        ) -> std::result::Result<
+            tonic::Response<super::FlushAllResponse>,
+            tonic::Status,
+        > {
             self.inner
                 .ready()
                 .await
@@ -4393,31 +3884,24 @@ pub mod milvus_service_client {
                         format!("Service was not ready: {}", e.into()),
                     )
                 })?;
->>>>>>> c00d092 (update the proto file to the latest 2.5)
             let codec = tonic::codec::ProstCodec::default();
             let path = http::uri::PathAndQuery::from_static(
                 "/milvus.proto.milvus.MilvusService/FlushAll",
             );
-            self.inner.unary(request.into_request(), path, codec).await
->>>>>>> d82a365 (format the code)
+            let mut req = request.into_request();
+            req.extensions_mut()
+                .insert(
+                    GrpcMethod::new("milvus.proto.milvus.MilvusService", "FlushAll"),
+                );
+            self.inner.unary(req, path, codec).await
         }
         pub async fn get_flush_state(
             &mut self,
             request: impl tonic::IntoRequest<super::GetFlushStateRequest>,
-<<<<<<< HEAD
-        ) -> std::result::Result<tonic::Response<super::GetFlushStateResponse>, tonic::Status>
-        {
-=======
-        ) -> Result<tonic::Response<super::GetFlushStateResponse>, tonic::Status> {
-<<<<<<< HEAD
->>>>>>> d82a365 (format the code)
-            self.inner.ready().await.map_err(|e| {
-                tonic::Status::new(
-                    tonic::Code::Unknown,
-                    format!("Service was not ready: {}", e.into()),
-                )
-            })?;
-=======
+        ) -> std::result::Result<
+            tonic::Response<super::GetFlushStateResponse>,
+            tonic::Status,
+        > {
             self.inner
                 .ready()
                 .await
@@ -4427,35 +3911,24 @@ pub mod milvus_service_client {
                         format!("Service was not ready: {}", e.into()),
                     )
                 })?;
->>>>>>> c00d092 (update the proto file to the latest 2.5)
             let codec = tonic::codec::ProstCodec::default();
             let path = http::uri::PathAndQuery::from_static(
                 "/milvus.proto.milvus.MilvusService/GetFlushState",
             );
             let mut req = request.into_request();
-            req.extensions_mut().insert(GrpcMethod::new(
-                "milvus.proto.milvus.MilvusService",
-                "GetFlushState",
-            ));
+            req.extensions_mut()
+                .insert(
+                    GrpcMethod::new("milvus.proto.milvus.MilvusService", "GetFlushState"),
+                );
             self.inner.unary(req, path, codec).await
         }
         pub async fn get_flush_all_state(
             &mut self,
             request: impl tonic::IntoRequest<super::GetFlushAllStateRequest>,
-<<<<<<< HEAD
-        ) -> std::result::Result<tonic::Response<super::GetFlushAllStateResponse>, tonic::Status>
-        {
-=======
-        ) -> Result<tonic::Response<super::GetFlushAllStateResponse>, tonic::Status> {
-<<<<<<< HEAD
->>>>>>> d82a365 (format the code)
-            self.inner.ready().await.map_err(|e| {
-                tonic::Status::new(
-                    tonic::Code::Unknown,
-                    format!("Service was not ready: {}", e.into()),
-                )
-            })?;
-=======
+        ) -> std::result::Result<
+            tonic::Response<super::GetFlushAllStateResponse>,
+            tonic::Status,
+        > {
             self.inner
                 .ready()
                 .await
@@ -4465,39 +3938,24 @@ pub mod milvus_service_client {
                         format!("Service was not ready: {}", e.into()),
                     )
                 })?;
->>>>>>> c00d092 (update the proto file to the latest 2.5)
             let codec = tonic::codec::ProstCodec::default();
             let path = http::uri::PathAndQuery::from_static(
                 "/milvus.proto.milvus.MilvusService/GetFlushAllState",
             );
             let mut req = request.into_request();
-            req.extensions_mut().insert(GrpcMethod::new(
-                "milvus.proto.milvus.MilvusService",
-                "GetFlushAllState",
-            ));
+            req.extensions_mut()
+                .insert(
+                    GrpcMethod::new(
+                        "milvus.proto.milvus.MilvusService",
+                        "GetFlushAllState",
+                    ),
+                );
             self.inner.unary(req, path, codec).await
         }
         pub async fn get_persistent_segment_info(
             &mut self,
             request: impl tonic::IntoRequest<super::GetPersistentSegmentInfoRequest>,
-<<<<<<< HEAD
-<<<<<<< HEAD
         ) -> std::result::Result<
-            tonic::Response<super::GetPersistentSegmentInfoResponse>,
-            tonic::Status,
-        > {
-=======
-        ) -> Result<tonic::Response<super::GetPersistentSegmentInfoResponse>, tonic::Status>
-        {
->>>>>>> d82a365 (format the code)
-            self.inner.ready().await.map_err(|e| {
-                tonic::Status::new(
-                    tonic::Code::Unknown,
-                    format!("Service was not ready: {}", e.into()),
-                )
-            })?;
-=======
-        ) -> Result<
             tonic::Response<super::GetPersistentSegmentInfoResponse>,
             tonic::Status,
         > {
@@ -4510,35 +3968,27 @@ pub mod milvus_service_client {
                         format!("Service was not ready: {}", e.into()),
                     )
                 })?;
->>>>>>> c00d092 (update the proto file to the latest 2.5)
             let codec = tonic::codec::ProstCodec::default();
             let path = http::uri::PathAndQuery::from_static(
                 "/milvus.proto.milvus.MilvusService/GetPersistentSegmentInfo",
             );
             let mut req = request.into_request();
-            req.extensions_mut().insert(GrpcMethod::new(
-                "milvus.proto.milvus.MilvusService",
-                "GetPersistentSegmentInfo",
-            ));
+            req.extensions_mut()
+                .insert(
+                    GrpcMethod::new(
+                        "milvus.proto.milvus.MilvusService",
+                        "GetPersistentSegmentInfo",
+                    ),
+                );
             self.inner.unary(req, path, codec).await
         }
         pub async fn get_query_segment_info(
             &mut self,
             request: impl tonic::IntoRequest<super::GetQuerySegmentInfoRequest>,
-<<<<<<< HEAD
-        ) -> std::result::Result<tonic::Response<super::GetQuerySegmentInfoResponse>, tonic::Status>
-        {
-=======
-        ) -> Result<tonic::Response<super::GetQuerySegmentInfoResponse>, tonic::Status> {
-<<<<<<< HEAD
->>>>>>> d82a365 (format the code)
-            self.inner.ready().await.map_err(|e| {
-                tonic::Status::new(
-                    tonic::Code::Unknown,
-                    format!("Service was not ready: {}", e.into()),
-                )
-            })?;
-=======
+        ) -> std::result::Result<
+            tonic::Response<super::GetQuerySegmentInfoResponse>,
+            tonic::Status,
+        > {
             self.inner
                 .ready()
                 .await
@@ -4548,35 +3998,27 @@ pub mod milvus_service_client {
                         format!("Service was not ready: {}", e.into()),
                     )
                 })?;
->>>>>>> c00d092 (update the proto file to the latest 2.5)
             let codec = tonic::codec::ProstCodec::default();
             let path = http::uri::PathAndQuery::from_static(
                 "/milvus.proto.milvus.MilvusService/GetQuerySegmentInfo",
             );
             let mut req = request.into_request();
-            req.extensions_mut().insert(GrpcMethod::new(
-                "milvus.proto.milvus.MilvusService",
-                "GetQuerySegmentInfo",
-            ));
+            req.extensions_mut()
+                .insert(
+                    GrpcMethod::new(
+                        "milvus.proto.milvus.MilvusService",
+                        "GetQuerySegmentInfo",
+                    ),
+                );
             self.inner.unary(req, path, codec).await
         }
         pub async fn get_replicas(
             &mut self,
             request: impl tonic::IntoRequest<super::GetReplicasRequest>,
-<<<<<<< HEAD
-        ) -> std::result::Result<tonic::Response<super::GetReplicasResponse>, tonic::Status>
-        {
-=======
-        ) -> Result<tonic::Response<super::GetReplicasResponse>, tonic::Status> {
-<<<<<<< HEAD
->>>>>>> d82a365 (format the code)
-            self.inner.ready().await.map_err(|e| {
-                tonic::Status::new(
-                    tonic::Code::Unknown,
-                    format!("Service was not ready: {}", e.into()),
-                )
-            })?;
-=======
+        ) -> std::result::Result<
+            tonic::Response<super::GetReplicasResponse>,
+            tonic::Status,
+        > {
             self.inner
                 .ready()
                 .await
@@ -4586,45 +4028,21 @@ pub mod milvus_service_client {
                         format!("Service was not ready: {}", e.into()),
                     )
                 })?;
->>>>>>> c00d092 (update the proto file to the latest 2.5)
             let codec = tonic::codec::ProstCodec::default();
             let path = http::uri::PathAndQuery::from_static(
                 "/milvus.proto.milvus.MilvusService/GetReplicas",
             );
             let mut req = request.into_request();
-            req.extensions_mut().insert(GrpcMethod::new(
-                "milvus.proto.milvus.MilvusService",
-                "GetReplicas",
-            ));
+            req.extensions_mut()
+                .insert(
+                    GrpcMethod::new("milvus.proto.milvus.MilvusService", "GetReplicas"),
+                );
             self.inner.unary(req, path, codec).await
         }
         pub async fn dummy(
             &mut self,
             request: impl tonic::IntoRequest<super::DummyRequest>,
-<<<<<<< HEAD
         ) -> std::result::Result<tonic::Response<super::DummyResponse>, tonic::Status> {
-=======
-        ) -> Result<tonic::Response<super::DummyResponse>, tonic::Status> {
-<<<<<<< HEAD
->>>>>>> d82a365 (format the code)
-            self.inner.ready().await.map_err(|e| {
-                tonic::Status::new(
-                    tonic::Code::Unknown,
-                    format!("Service was not ready: {}", e.into()),
-                )
-            })?;
-            let codec = tonic::codec::ProstCodec::default();
-            let path =
-                http::uri::PathAndQuery::from_static("/milvus.proto.milvus.MilvusService/Dummy");
-<<<<<<< HEAD
-            let mut req = request.into_request();
-            req.extensions_mut().insert(GrpcMethod::new(
-                "milvus.proto.milvus.MilvusService",
-                "Dummy",
-            ));
-            self.inner.unary(req, path, codec).await
-=======
-=======
             self.inner
                 .ready()
                 .await
@@ -4638,28 +4056,19 @@ pub mod milvus_service_client {
             let path = http::uri::PathAndQuery::from_static(
                 "/milvus.proto.milvus.MilvusService/Dummy",
             );
->>>>>>> c00d092 (update the proto file to the latest 2.5)
-            self.inner.unary(request.into_request(), path, codec).await
->>>>>>> d82a365 (format the code)
+            let mut req = request.into_request();
+            req.extensions_mut()
+                .insert(GrpcMethod::new("milvus.proto.milvus.MilvusService", "Dummy"));
+            self.inner.unary(req, path, codec).await
         }
         /// TODO: remove
         pub async fn register_link(
             &mut self,
             request: impl tonic::IntoRequest<super::RegisterLinkRequest>,
-<<<<<<< HEAD
-        ) -> std::result::Result<tonic::Response<super::RegisterLinkResponse>, tonic::Status>
-        {
-=======
-        ) -> Result<tonic::Response<super::RegisterLinkResponse>, tonic::Status> {
-<<<<<<< HEAD
->>>>>>> d82a365 (format the code)
-            self.inner.ready().await.map_err(|e| {
-                tonic::Status::new(
-                    tonic::Code::Unknown,
-                    format!("Service was not ready: {}", e.into()),
-                )
-            })?;
-=======
+        ) -> std::result::Result<
+            tonic::Response<super::RegisterLinkResponse>,
+            tonic::Status,
+        > {
             self.inner
                 .ready()
                 .await
@@ -4669,36 +4078,25 @@ pub mod milvus_service_client {
                         format!("Service was not ready: {}", e.into()),
                     )
                 })?;
->>>>>>> c00d092 (update the proto file to the latest 2.5)
             let codec = tonic::codec::ProstCodec::default();
             let path = http::uri::PathAndQuery::from_static(
                 "/milvus.proto.milvus.MilvusService/RegisterLink",
             );
             let mut req = request.into_request();
-            req.extensions_mut().insert(GrpcMethod::new(
-                "milvus.proto.milvus.MilvusService",
-                "RegisterLink",
-            ));
+            req.extensions_mut()
+                .insert(
+                    GrpcMethod::new("milvus.proto.milvus.MilvusService", "RegisterLink"),
+                );
             self.inner.unary(req, path, codec).await
         }
         /// https://wiki.lfaidata.foundation/display/MIL/MEP+8+--+Add+metrics+for+proxy
         pub async fn get_metrics(
             &mut self,
             request: impl tonic::IntoRequest<super::GetMetricsRequest>,
-<<<<<<< HEAD
-        ) -> std::result::Result<tonic::Response<super::GetMetricsResponse>, tonic::Status>
-        {
-=======
-        ) -> Result<tonic::Response<super::GetMetricsResponse>, tonic::Status> {
-<<<<<<< HEAD
->>>>>>> d82a365 (format the code)
-            self.inner.ready().await.map_err(|e| {
-                tonic::Status::new(
-                    tonic::Code::Unknown,
-                    format!("Service was not ready: {}", e.into()),
-                )
-            })?;
-=======
+        ) -> std::result::Result<
+            tonic::Response<super::GetMetricsResponse>,
+            tonic::Status,
+        > {
             self.inner
                 .ready()
                 .await
@@ -4708,34 +4106,24 @@ pub mod milvus_service_client {
                         format!("Service was not ready: {}", e.into()),
                     )
                 })?;
->>>>>>> c00d092 (update the proto file to the latest 2.5)
             let codec = tonic::codec::ProstCodec::default();
             let path = http::uri::PathAndQuery::from_static(
                 "/milvus.proto.milvus.MilvusService/GetMetrics",
             );
             let mut req = request.into_request();
-            req.extensions_mut().insert(GrpcMethod::new(
-                "milvus.proto.milvus.MilvusService",
-                "GetMetrics",
-            ));
+            req.extensions_mut()
+                .insert(
+                    GrpcMethod::new("milvus.proto.milvus.MilvusService", "GetMetrics"),
+                );
             self.inner.unary(req, path, codec).await
         }
         pub async fn get_component_states(
             &mut self,
             request: impl tonic::IntoRequest<super::GetComponentStatesRequest>,
-<<<<<<< HEAD
-        ) -> std::result::Result<tonic::Response<super::ComponentStates>, tonic::Status> {
-=======
-        ) -> Result<tonic::Response<super::ComponentStates>, tonic::Status> {
-<<<<<<< HEAD
->>>>>>> d82a365 (format the code)
-            self.inner.ready().await.map_err(|e| {
-                tonic::Status::new(
-                    tonic::Code::Unknown,
-                    format!("Service was not ready: {}", e.into()),
-                )
-            })?;
-=======
+        ) -> std::result::Result<
+            tonic::Response<super::ComponentStates>,
+            tonic::Status,
+        > {
             self.inner
                 .ready()
                 .await
@@ -4745,35 +4133,27 @@ pub mod milvus_service_client {
                         format!("Service was not ready: {}", e.into()),
                     )
                 })?;
->>>>>>> c00d092 (update the proto file to the latest 2.5)
             let codec = tonic::codec::ProstCodec::default();
             let path = http::uri::PathAndQuery::from_static(
                 "/milvus.proto.milvus.MilvusService/GetComponentStates",
             );
             let mut req = request.into_request();
-            req.extensions_mut().insert(GrpcMethod::new(
-                "milvus.proto.milvus.MilvusService",
-                "GetComponentStates",
-            ));
+            req.extensions_mut()
+                .insert(
+                    GrpcMethod::new(
+                        "milvus.proto.milvus.MilvusService",
+                        "GetComponentStates",
+                    ),
+                );
             self.inner.unary(req, path, codec).await
         }
         pub async fn load_balance(
             &mut self,
             request: impl tonic::IntoRequest<super::LoadBalanceRequest>,
-<<<<<<< HEAD
-        ) -> std::result::Result<tonic::Response<super::super::common::Status>, tonic::Status>
-        {
-=======
-        ) -> Result<tonic::Response<super::super::common::Status>, tonic::Status> {
-<<<<<<< HEAD
->>>>>>> d82a365 (format the code)
-            self.inner.ready().await.map_err(|e| {
-                tonic::Status::new(
-                    tonic::Code::Unknown,
-                    format!("Service was not ready: {}", e.into()),
-                )
-            })?;
-=======
+        ) -> std::result::Result<
+            tonic::Response<super::super::common::Status>,
+            tonic::Status,
+        > {
             self.inner
                 .ready()
                 .await
@@ -4783,35 +4163,24 @@ pub mod milvus_service_client {
                         format!("Service was not ready: {}", e.into()),
                     )
                 })?;
->>>>>>> c00d092 (update the proto file to the latest 2.5)
             let codec = tonic::codec::ProstCodec::default();
             let path = http::uri::PathAndQuery::from_static(
                 "/milvus.proto.milvus.MilvusService/LoadBalance",
             );
             let mut req = request.into_request();
-            req.extensions_mut().insert(GrpcMethod::new(
-                "milvus.proto.milvus.MilvusService",
-                "LoadBalance",
-            ));
+            req.extensions_mut()
+                .insert(
+                    GrpcMethod::new("milvus.proto.milvus.MilvusService", "LoadBalance"),
+                );
             self.inner.unary(req, path, codec).await
         }
         pub async fn get_compaction_state(
             &mut self,
             request: impl tonic::IntoRequest<super::GetCompactionStateRequest>,
-<<<<<<< HEAD
-        ) -> std::result::Result<tonic::Response<super::GetCompactionStateResponse>, tonic::Status>
-        {
-=======
-        ) -> Result<tonic::Response<super::GetCompactionStateResponse>, tonic::Status> {
-<<<<<<< HEAD
->>>>>>> d82a365 (format the code)
-            self.inner.ready().await.map_err(|e| {
-                tonic::Status::new(
-                    tonic::Code::Unknown,
-                    format!("Service was not ready: {}", e.into()),
-                )
-            })?;
-=======
+        ) -> std::result::Result<
+            tonic::Response<super::GetCompactionStateResponse>,
+            tonic::Status,
+        > {
             self.inner
                 .ready()
                 .await
@@ -4821,35 +4190,27 @@ pub mod milvus_service_client {
                         format!("Service was not ready: {}", e.into()),
                     )
                 })?;
->>>>>>> c00d092 (update the proto file to the latest 2.5)
             let codec = tonic::codec::ProstCodec::default();
             let path = http::uri::PathAndQuery::from_static(
                 "/milvus.proto.milvus.MilvusService/GetCompactionState",
             );
             let mut req = request.into_request();
-            req.extensions_mut().insert(GrpcMethod::new(
-                "milvus.proto.milvus.MilvusService",
-                "GetCompactionState",
-            ));
+            req.extensions_mut()
+                .insert(
+                    GrpcMethod::new(
+                        "milvus.proto.milvus.MilvusService",
+                        "GetCompactionState",
+                    ),
+                );
             self.inner.unary(req, path, codec).await
         }
         pub async fn manual_compaction(
             &mut self,
             request: impl tonic::IntoRequest<super::ManualCompactionRequest>,
-<<<<<<< HEAD
-        ) -> std::result::Result<tonic::Response<super::ManualCompactionResponse>, tonic::Status>
-        {
-=======
-        ) -> Result<tonic::Response<super::ManualCompactionResponse>, tonic::Status> {
-<<<<<<< HEAD
->>>>>>> d82a365 (format the code)
-            self.inner.ready().await.map_err(|e| {
-                tonic::Status::new(
-                    tonic::Code::Unknown,
-                    format!("Service was not ready: {}", e.into()),
-                )
-            })?;
-=======
+        ) -> std::result::Result<
+            tonic::Response<super::ManualCompactionResponse>,
+            tonic::Status,
+        > {
             self.inner
                 .ready()
                 .await
@@ -4859,35 +4220,27 @@ pub mod milvus_service_client {
                         format!("Service was not ready: {}", e.into()),
                     )
                 })?;
->>>>>>> c00d092 (update the proto file to the latest 2.5)
             let codec = tonic::codec::ProstCodec::default();
             let path = http::uri::PathAndQuery::from_static(
                 "/milvus.proto.milvus.MilvusService/ManualCompaction",
             );
             let mut req = request.into_request();
-            req.extensions_mut().insert(GrpcMethod::new(
-                "milvus.proto.milvus.MilvusService",
-                "ManualCompaction",
-            ));
+            req.extensions_mut()
+                .insert(
+                    GrpcMethod::new(
+                        "milvus.proto.milvus.MilvusService",
+                        "ManualCompaction",
+                    ),
+                );
             self.inner.unary(req, path, codec).await
         }
         pub async fn get_compaction_state_with_plans(
             &mut self,
             request: impl tonic::IntoRequest<super::GetCompactionPlansRequest>,
-<<<<<<< HEAD
-        ) -> std::result::Result<tonic::Response<super::GetCompactionPlansResponse>, tonic::Status>
-        {
-=======
-        ) -> Result<tonic::Response<super::GetCompactionPlansResponse>, tonic::Status> {
-<<<<<<< HEAD
->>>>>>> d82a365 (format the code)
-            self.inner.ready().await.map_err(|e| {
-                tonic::Status::new(
-                    tonic::Code::Unknown,
-                    format!("Service was not ready: {}", e.into()),
-                )
-            })?;
-=======
+        ) -> std::result::Result<
+            tonic::Response<super::GetCompactionPlansResponse>,
+            tonic::Status,
+        > {
             self.inner
                 .ready()
                 .await
@@ -4897,46 +4250,25 @@ pub mod milvus_service_client {
                         format!("Service was not ready: {}", e.into()),
                     )
                 })?;
->>>>>>> c00d092 (update the proto file to the latest 2.5)
             let codec = tonic::codec::ProstCodec::default();
             let path = http::uri::PathAndQuery::from_static(
                 "/milvus.proto.milvus.MilvusService/GetCompactionStateWithPlans",
             );
             let mut req = request.into_request();
-            req.extensions_mut().insert(GrpcMethod::new(
-                "milvus.proto.milvus.MilvusService",
-                "GetCompactionStateWithPlans",
-            ));
+            req.extensions_mut()
+                .insert(
+                    GrpcMethod::new(
+                        "milvus.proto.milvus.MilvusService",
+                        "GetCompactionStateWithPlans",
+                    ),
+                );
             self.inner.unary(req, path, codec).await
         }
         /// https://wiki.lfaidata.foundation/display/MIL/MEP+24+--+Support+bulk+load
         pub async fn import(
             &mut self,
             request: impl tonic::IntoRequest<super::ImportRequest>,
-<<<<<<< HEAD
         ) -> std::result::Result<tonic::Response<super::ImportResponse>, tonic::Status> {
-=======
-        ) -> Result<tonic::Response<super::ImportResponse>, tonic::Status> {
-<<<<<<< HEAD
->>>>>>> d82a365 (format the code)
-            self.inner.ready().await.map_err(|e| {
-                tonic::Status::new(
-                    tonic::Code::Unknown,
-                    format!("Service was not ready: {}", e.into()),
-                )
-            })?;
-            let codec = tonic::codec::ProstCodec::default();
-            let path =
-                http::uri::PathAndQuery::from_static("/milvus.proto.milvus.MilvusService/Import");
-<<<<<<< HEAD
-            let mut req = request.into_request();
-            req.extensions_mut().insert(GrpcMethod::new(
-                "milvus.proto.milvus.MilvusService",
-                "Import",
-            ));
-            self.inner.unary(req, path, codec).await
-=======
-=======
             self.inner
                 .ready()
                 .await
@@ -4950,27 +4282,18 @@ pub mod milvus_service_client {
             let path = http::uri::PathAndQuery::from_static(
                 "/milvus.proto.milvus.MilvusService/Import",
             );
->>>>>>> c00d092 (update the proto file to the latest 2.5)
-            self.inner.unary(request.into_request(), path, codec).await
->>>>>>> d82a365 (format the code)
+            let mut req = request.into_request();
+            req.extensions_mut()
+                .insert(GrpcMethod::new("milvus.proto.milvus.MilvusService", "Import"));
+            self.inner.unary(req, path, codec).await
         }
         pub async fn get_import_state(
             &mut self,
             request: impl tonic::IntoRequest<super::GetImportStateRequest>,
-<<<<<<< HEAD
-        ) -> std::result::Result<tonic::Response<super::GetImportStateResponse>, tonic::Status>
-        {
-=======
-        ) -> Result<tonic::Response<super::GetImportStateResponse>, tonic::Status> {
-<<<<<<< HEAD
->>>>>>> d82a365 (format the code)
-            self.inner.ready().await.map_err(|e| {
-                tonic::Status::new(
-                    tonic::Code::Unknown,
-                    format!("Service was not ready: {}", e.into()),
-                )
-            })?;
-=======
+        ) -> std::result::Result<
+            tonic::Response<super::GetImportStateResponse>,
+            tonic::Status,
+        > {
             self.inner
                 .ready()
                 .await
@@ -4980,35 +4303,27 @@ pub mod milvus_service_client {
                         format!("Service was not ready: {}", e.into()),
                     )
                 })?;
->>>>>>> c00d092 (update the proto file to the latest 2.5)
             let codec = tonic::codec::ProstCodec::default();
             let path = http::uri::PathAndQuery::from_static(
                 "/milvus.proto.milvus.MilvusService/GetImportState",
             );
             let mut req = request.into_request();
-            req.extensions_mut().insert(GrpcMethod::new(
-                "milvus.proto.milvus.MilvusService",
-                "GetImportState",
-            ));
+            req.extensions_mut()
+                .insert(
+                    GrpcMethod::new(
+                        "milvus.proto.milvus.MilvusService",
+                        "GetImportState",
+                    ),
+                );
             self.inner.unary(req, path, codec).await
         }
         pub async fn list_import_tasks(
             &mut self,
             request: impl tonic::IntoRequest<super::ListImportTasksRequest>,
-<<<<<<< HEAD
-        ) -> std::result::Result<tonic::Response<super::ListImportTasksResponse>, tonic::Status>
-        {
-=======
-        ) -> Result<tonic::Response<super::ListImportTasksResponse>, tonic::Status> {
-<<<<<<< HEAD
->>>>>>> d82a365 (format the code)
-            self.inner.ready().await.map_err(|e| {
-                tonic::Status::new(
-                    tonic::Code::Unknown,
-                    format!("Service was not ready: {}", e.into()),
-                )
-            })?;
-=======
+        ) -> std::result::Result<
+            tonic::Response<super::ListImportTasksResponse>,
+            tonic::Status,
+        > {
             self.inner
                 .ready()
                 .await
@@ -5018,36 +4333,28 @@ pub mod milvus_service_client {
                         format!("Service was not ready: {}", e.into()),
                     )
                 })?;
->>>>>>> c00d092 (update the proto file to the latest 2.5)
             let codec = tonic::codec::ProstCodec::default();
             let path = http::uri::PathAndQuery::from_static(
                 "/milvus.proto.milvus.MilvusService/ListImportTasks",
             );
             let mut req = request.into_request();
-            req.extensions_mut().insert(GrpcMethod::new(
-                "milvus.proto.milvus.MilvusService",
-                "ListImportTasks",
-            ));
+            req.extensions_mut()
+                .insert(
+                    GrpcMethod::new(
+                        "milvus.proto.milvus.MilvusService",
+                        "ListImportTasks",
+                    ),
+                );
             self.inner.unary(req, path, codec).await
         }
         /// https://wiki.lfaidata.foundation/display/MIL/MEP+27+--+Support+Basic+Authentication
         pub async fn create_credential(
             &mut self,
             request: impl tonic::IntoRequest<super::CreateCredentialRequest>,
-<<<<<<< HEAD
-        ) -> std::result::Result<tonic::Response<super::super::common::Status>, tonic::Status>
-        {
-=======
-        ) -> Result<tonic::Response<super::super::common::Status>, tonic::Status> {
-<<<<<<< HEAD
->>>>>>> d82a365 (format the code)
-            self.inner.ready().await.map_err(|e| {
-                tonic::Status::new(
-                    tonic::Code::Unknown,
-                    format!("Service was not ready: {}", e.into()),
-                )
-            })?;
-=======
+        ) -> std::result::Result<
+            tonic::Response<super::super::common::Status>,
+            tonic::Status,
+        > {
             self.inner
                 .ready()
                 .await
@@ -5057,35 +4364,27 @@ pub mod milvus_service_client {
                         format!("Service was not ready: {}", e.into()),
                     )
                 })?;
->>>>>>> c00d092 (update the proto file to the latest 2.5)
             let codec = tonic::codec::ProstCodec::default();
             let path = http::uri::PathAndQuery::from_static(
                 "/milvus.proto.milvus.MilvusService/CreateCredential",
             );
             let mut req = request.into_request();
-            req.extensions_mut().insert(GrpcMethod::new(
-                "milvus.proto.milvus.MilvusService",
-                "CreateCredential",
-            ));
+            req.extensions_mut()
+                .insert(
+                    GrpcMethod::new(
+                        "milvus.proto.milvus.MilvusService",
+                        "CreateCredential",
+                    ),
+                );
             self.inner.unary(req, path, codec).await
         }
         pub async fn update_credential(
             &mut self,
             request: impl tonic::IntoRequest<super::UpdateCredentialRequest>,
-<<<<<<< HEAD
-        ) -> std::result::Result<tonic::Response<super::super::common::Status>, tonic::Status>
-        {
-=======
-        ) -> Result<tonic::Response<super::super::common::Status>, tonic::Status> {
-<<<<<<< HEAD
->>>>>>> d82a365 (format the code)
-            self.inner.ready().await.map_err(|e| {
-                tonic::Status::new(
-                    tonic::Code::Unknown,
-                    format!("Service was not ready: {}", e.into()),
-                )
-            })?;
-=======
+        ) -> std::result::Result<
+            tonic::Response<super::super::common::Status>,
+            tonic::Status,
+        > {
             self.inner
                 .ready()
                 .await
@@ -5095,35 +4394,27 @@ pub mod milvus_service_client {
                         format!("Service was not ready: {}", e.into()),
                     )
                 })?;
->>>>>>> c00d092 (update the proto file to the latest 2.5)
             let codec = tonic::codec::ProstCodec::default();
             let path = http::uri::PathAndQuery::from_static(
                 "/milvus.proto.milvus.MilvusService/UpdateCredential",
             );
             let mut req = request.into_request();
-            req.extensions_mut().insert(GrpcMethod::new(
-                "milvus.proto.milvus.MilvusService",
-                "UpdateCredential",
-            ));
+            req.extensions_mut()
+                .insert(
+                    GrpcMethod::new(
+                        "milvus.proto.milvus.MilvusService",
+                        "UpdateCredential",
+                    ),
+                );
             self.inner.unary(req, path, codec).await
         }
         pub async fn delete_credential(
             &mut self,
             request: impl tonic::IntoRequest<super::DeleteCredentialRequest>,
-<<<<<<< HEAD
-        ) -> std::result::Result<tonic::Response<super::super::common::Status>, tonic::Status>
-        {
-=======
-        ) -> Result<tonic::Response<super::super::common::Status>, tonic::Status> {
-<<<<<<< HEAD
->>>>>>> d82a365 (format the code)
-            self.inner.ready().await.map_err(|e| {
-                tonic::Status::new(
-                    tonic::Code::Unknown,
-                    format!("Service was not ready: {}", e.into()),
-                )
-            })?;
-=======
+        ) -> std::result::Result<
+            tonic::Response<super::super::common::Status>,
+            tonic::Status,
+        > {
             self.inner
                 .ready()
                 .await
@@ -5133,35 +4424,27 @@ pub mod milvus_service_client {
                         format!("Service was not ready: {}", e.into()),
                     )
                 })?;
->>>>>>> c00d092 (update the proto file to the latest 2.5)
             let codec = tonic::codec::ProstCodec::default();
             let path = http::uri::PathAndQuery::from_static(
                 "/milvus.proto.milvus.MilvusService/DeleteCredential",
             );
             let mut req = request.into_request();
-            req.extensions_mut().insert(GrpcMethod::new(
-                "milvus.proto.milvus.MilvusService",
-                "DeleteCredential",
-            ));
+            req.extensions_mut()
+                .insert(
+                    GrpcMethod::new(
+                        "milvus.proto.milvus.MilvusService",
+                        "DeleteCredential",
+                    ),
+                );
             self.inner.unary(req, path, codec).await
         }
         pub async fn list_cred_users(
             &mut self,
             request: impl tonic::IntoRequest<super::ListCredUsersRequest>,
-<<<<<<< HEAD
-        ) -> std::result::Result<tonic::Response<super::ListCredUsersResponse>, tonic::Status>
-        {
-=======
-        ) -> Result<tonic::Response<super::ListCredUsersResponse>, tonic::Status> {
-<<<<<<< HEAD
->>>>>>> d82a365 (format the code)
-            self.inner.ready().await.map_err(|e| {
-                tonic::Status::new(
-                    tonic::Code::Unknown,
-                    format!("Service was not ready: {}", e.into()),
-                )
-            })?;
-=======
+        ) -> std::result::Result<
+            tonic::Response<super::ListCredUsersResponse>,
+            tonic::Status,
+        > {
             self.inner
                 .ready()
                 .await
@@ -5171,36 +4454,25 @@ pub mod milvus_service_client {
                         format!("Service was not ready: {}", e.into()),
                     )
                 })?;
->>>>>>> c00d092 (update the proto file to the latest 2.5)
             let codec = tonic::codec::ProstCodec::default();
             let path = http::uri::PathAndQuery::from_static(
                 "/milvus.proto.milvus.MilvusService/ListCredUsers",
             );
             let mut req = request.into_request();
-            req.extensions_mut().insert(GrpcMethod::new(
-                "milvus.proto.milvus.MilvusService",
-                "ListCredUsers",
-            ));
+            req.extensions_mut()
+                .insert(
+                    GrpcMethod::new("milvus.proto.milvus.MilvusService", "ListCredUsers"),
+                );
             self.inner.unary(req, path, codec).await
         }
         /// https://wiki.lfaidata.foundation/display/MIL/MEP+29+--+Support+Role-Based+Access+Control
         pub async fn create_role(
             &mut self,
             request: impl tonic::IntoRequest<super::CreateRoleRequest>,
-<<<<<<< HEAD
-        ) -> std::result::Result<tonic::Response<super::super::common::Status>, tonic::Status>
-        {
-=======
-        ) -> Result<tonic::Response<super::super::common::Status>, tonic::Status> {
-<<<<<<< HEAD
->>>>>>> d82a365 (format the code)
-            self.inner.ready().await.map_err(|e| {
-                tonic::Status::new(
-                    tonic::Code::Unknown,
-                    format!("Service was not ready: {}", e.into()),
-                )
-            })?;
-=======
+        ) -> std::result::Result<
+            tonic::Response<super::super::common::Status>,
+            tonic::Status,
+        > {
             self.inner
                 .ready()
                 .await
@@ -5210,46 +4482,24 @@ pub mod milvus_service_client {
                         format!("Service was not ready: {}", e.into()),
                     )
                 })?;
->>>>>>> c00d092 (update the proto file to the latest 2.5)
             let codec = tonic::codec::ProstCodec::default();
             let path = http::uri::PathAndQuery::from_static(
                 "/milvus.proto.milvus.MilvusService/CreateRole",
             );
             let mut req = request.into_request();
-            req.extensions_mut().insert(GrpcMethod::new(
-                "milvus.proto.milvus.MilvusService",
-                "CreateRole",
-            ));
+            req.extensions_mut()
+                .insert(
+                    GrpcMethod::new("milvus.proto.milvus.MilvusService", "CreateRole"),
+                );
             self.inner.unary(req, path, codec).await
         }
         pub async fn drop_role(
             &mut self,
             request: impl tonic::IntoRequest<super::DropRoleRequest>,
-<<<<<<< HEAD
-        ) -> std::result::Result<tonic::Response<super::super::common::Status>, tonic::Status>
-        {
-=======
-        ) -> Result<tonic::Response<super::super::common::Status>, tonic::Status> {
-<<<<<<< HEAD
->>>>>>> d82a365 (format the code)
-            self.inner.ready().await.map_err(|e| {
-                tonic::Status::new(
-                    tonic::Code::Unknown,
-                    format!("Service was not ready: {}", e.into()),
-                )
-            })?;
-            let codec = tonic::codec::ProstCodec::default();
-            let path =
-                http::uri::PathAndQuery::from_static("/milvus.proto.milvus.MilvusService/DropRole");
-<<<<<<< HEAD
-            let mut req = request.into_request();
-            req.extensions_mut().insert(GrpcMethod::new(
-                "milvus.proto.milvus.MilvusService",
-                "DropRole",
-            ));
-            self.inner.unary(req, path, codec).await
-=======
-=======
+        ) -> std::result::Result<
+            tonic::Response<super::super::common::Status>,
+            tonic::Status,
+        > {
             self.inner
                 .ready()
                 .await
@@ -5263,27 +4513,20 @@ pub mod milvus_service_client {
             let path = http::uri::PathAndQuery::from_static(
                 "/milvus.proto.milvus.MilvusService/DropRole",
             );
->>>>>>> c00d092 (update the proto file to the latest 2.5)
-            self.inner.unary(request.into_request(), path, codec).await
->>>>>>> d82a365 (format the code)
+            let mut req = request.into_request();
+            req.extensions_mut()
+                .insert(
+                    GrpcMethod::new("milvus.proto.milvus.MilvusService", "DropRole"),
+                );
+            self.inner.unary(req, path, codec).await
         }
         pub async fn operate_user_role(
             &mut self,
             request: impl tonic::IntoRequest<super::OperateUserRoleRequest>,
-<<<<<<< HEAD
-        ) -> std::result::Result<tonic::Response<super::super::common::Status>, tonic::Status>
-        {
-=======
-        ) -> Result<tonic::Response<super::super::common::Status>, tonic::Status> {
-<<<<<<< HEAD
->>>>>>> d82a365 (format the code)
-            self.inner.ready().await.map_err(|e| {
-                tonic::Status::new(
-                    tonic::Code::Unknown,
-                    format!("Service was not ready: {}", e.into()),
-                )
-            })?;
-=======
+        ) -> std::result::Result<
+            tonic::Response<super::super::common::Status>,
+            tonic::Status,
+        > {
             self.inner
                 .ready()
                 .await
@@ -5293,35 +4536,27 @@ pub mod milvus_service_client {
                         format!("Service was not ready: {}", e.into()),
                     )
                 })?;
->>>>>>> c00d092 (update the proto file to the latest 2.5)
             let codec = tonic::codec::ProstCodec::default();
             let path = http::uri::PathAndQuery::from_static(
                 "/milvus.proto.milvus.MilvusService/OperateUserRole",
             );
             let mut req = request.into_request();
-            req.extensions_mut().insert(GrpcMethod::new(
-                "milvus.proto.milvus.MilvusService",
-                "OperateUserRole",
-            ));
+            req.extensions_mut()
+                .insert(
+                    GrpcMethod::new(
+                        "milvus.proto.milvus.MilvusService",
+                        "OperateUserRole",
+                    ),
+                );
             self.inner.unary(req, path, codec).await
         }
         pub async fn select_role(
             &mut self,
             request: impl tonic::IntoRequest<super::SelectRoleRequest>,
-<<<<<<< HEAD
-        ) -> std::result::Result<tonic::Response<super::SelectRoleResponse>, tonic::Status>
-        {
-=======
-        ) -> Result<tonic::Response<super::SelectRoleResponse>, tonic::Status> {
-<<<<<<< HEAD
->>>>>>> d82a365 (format the code)
-            self.inner.ready().await.map_err(|e| {
-                tonic::Status::new(
-                    tonic::Code::Unknown,
-                    format!("Service was not ready: {}", e.into()),
-                )
-            })?;
-=======
+        ) -> std::result::Result<
+            tonic::Response<super::SelectRoleResponse>,
+            tonic::Status,
+        > {
             self.inner
                 .ready()
                 .await
@@ -5331,35 +4566,24 @@ pub mod milvus_service_client {
                         format!("Service was not ready: {}", e.into()),
                     )
                 })?;
->>>>>>> c00d092 (update the proto file to the latest 2.5)
             let codec = tonic::codec::ProstCodec::default();
             let path = http::uri::PathAndQuery::from_static(
                 "/milvus.proto.milvus.MilvusService/SelectRole",
             );
             let mut req = request.into_request();
-            req.extensions_mut().insert(GrpcMethod::new(
-                "milvus.proto.milvus.MilvusService",
-                "SelectRole",
-            ));
+            req.extensions_mut()
+                .insert(
+                    GrpcMethod::new("milvus.proto.milvus.MilvusService", "SelectRole"),
+                );
             self.inner.unary(req, path, codec).await
         }
         pub async fn select_user(
             &mut self,
             request: impl tonic::IntoRequest<super::SelectUserRequest>,
-<<<<<<< HEAD
-        ) -> std::result::Result<tonic::Response<super::SelectUserResponse>, tonic::Status>
-        {
-=======
-        ) -> Result<tonic::Response<super::SelectUserResponse>, tonic::Status> {
-<<<<<<< HEAD
->>>>>>> d82a365 (format the code)
-            self.inner.ready().await.map_err(|e| {
-                tonic::Status::new(
-                    tonic::Code::Unknown,
-                    format!("Service was not ready: {}", e.into()),
-                )
-            })?;
-=======
+        ) -> std::result::Result<
+            tonic::Response<super::SelectUserResponse>,
+            tonic::Status,
+        > {
             self.inner
                 .ready()
                 .await
@@ -5369,35 +4593,24 @@ pub mod milvus_service_client {
                         format!("Service was not ready: {}", e.into()),
                     )
                 })?;
->>>>>>> c00d092 (update the proto file to the latest 2.5)
             let codec = tonic::codec::ProstCodec::default();
             let path = http::uri::PathAndQuery::from_static(
                 "/milvus.proto.milvus.MilvusService/SelectUser",
             );
             let mut req = request.into_request();
-            req.extensions_mut().insert(GrpcMethod::new(
-                "milvus.proto.milvus.MilvusService",
-                "SelectUser",
-            ));
+            req.extensions_mut()
+                .insert(
+                    GrpcMethod::new("milvus.proto.milvus.MilvusService", "SelectUser"),
+                );
             self.inner.unary(req, path, codec).await
         }
         pub async fn operate_privilege(
             &mut self,
             request: impl tonic::IntoRequest<super::OperatePrivilegeRequest>,
-<<<<<<< HEAD
-        ) -> std::result::Result<tonic::Response<super::super::common::Status>, tonic::Status>
-        {
-=======
-        ) -> Result<tonic::Response<super::super::common::Status>, tonic::Status> {
-<<<<<<< HEAD
->>>>>>> d82a365 (format the code)
-            self.inner.ready().await.map_err(|e| {
-                tonic::Status::new(
-                    tonic::Code::Unknown,
-                    format!("Service was not ready: {}", e.into()),
-                )
-            })?;
-=======
+        ) -> std::result::Result<
+            tonic::Response<super::super::common::Status>,
+            tonic::Status,
+        > {
             self.inner
                 .ready()
                 .await
@@ -5407,35 +4620,27 @@ pub mod milvus_service_client {
                         format!("Service was not ready: {}", e.into()),
                     )
                 })?;
->>>>>>> c00d092 (update the proto file to the latest 2.5)
             let codec = tonic::codec::ProstCodec::default();
             let path = http::uri::PathAndQuery::from_static(
                 "/milvus.proto.milvus.MilvusService/OperatePrivilege",
             );
             let mut req = request.into_request();
-            req.extensions_mut().insert(GrpcMethod::new(
-                "milvus.proto.milvus.MilvusService",
-                "OperatePrivilege",
-            ));
+            req.extensions_mut()
+                .insert(
+                    GrpcMethod::new(
+                        "milvus.proto.milvus.MilvusService",
+                        "OperatePrivilege",
+                    ),
+                );
             self.inner.unary(req, path, codec).await
         }
         pub async fn operate_privilege_v2(
             &mut self,
             request: impl tonic::IntoRequest<super::OperatePrivilegeV2Request>,
-<<<<<<< HEAD
-        ) -> std::result::Result<tonic::Response<super::super::common::Status>, tonic::Status>
-        {
-=======
-        ) -> Result<tonic::Response<super::super::common::Status>, tonic::Status> {
-<<<<<<< HEAD
->>>>>>> d82a365 (format the code)
-            self.inner.ready().await.map_err(|e| {
-                tonic::Status::new(
-                    tonic::Code::Unknown,
-                    format!("Service was not ready: {}", e.into()),
-                )
-            })?;
-=======
+        ) -> std::result::Result<
+            tonic::Response<super::super::common::Status>,
+            tonic::Status,
+        > {
             self.inner
                 .ready()
                 .await
@@ -5445,35 +4650,27 @@ pub mod milvus_service_client {
                         format!("Service was not ready: {}", e.into()),
                     )
                 })?;
->>>>>>> c00d092 (update the proto file to the latest 2.5)
             let codec = tonic::codec::ProstCodec::default();
             let path = http::uri::PathAndQuery::from_static(
                 "/milvus.proto.milvus.MilvusService/OperatePrivilegeV2",
             );
             let mut req = request.into_request();
-            req.extensions_mut().insert(GrpcMethod::new(
-                "milvus.proto.milvus.MilvusService",
-                "OperatePrivilegeV2",
-            ));
+            req.extensions_mut()
+                .insert(
+                    GrpcMethod::new(
+                        "milvus.proto.milvus.MilvusService",
+                        "OperatePrivilegeV2",
+                    ),
+                );
             self.inner.unary(req, path, codec).await
         }
         pub async fn select_grant(
             &mut self,
             request: impl tonic::IntoRequest<super::SelectGrantRequest>,
-<<<<<<< HEAD
-        ) -> std::result::Result<tonic::Response<super::SelectGrantResponse>, tonic::Status>
-        {
-=======
-        ) -> Result<tonic::Response<super::SelectGrantResponse>, tonic::Status> {
-<<<<<<< HEAD
->>>>>>> d82a365 (format the code)
-            self.inner.ready().await.map_err(|e| {
-                tonic::Status::new(
-                    tonic::Code::Unknown,
-                    format!("Service was not ready: {}", e.into()),
-                )
-            })?;
-=======
+        ) -> std::result::Result<
+            tonic::Response<super::SelectGrantResponse>,
+            tonic::Status,
+        > {
             self.inner
                 .ready()
                 .await
@@ -5483,35 +4680,24 @@ pub mod milvus_service_client {
                         format!("Service was not ready: {}", e.into()),
                     )
                 })?;
->>>>>>> c00d092 (update the proto file to the latest 2.5)
             let codec = tonic::codec::ProstCodec::default();
             let path = http::uri::PathAndQuery::from_static(
                 "/milvus.proto.milvus.MilvusService/SelectGrant",
             );
             let mut req = request.into_request();
-            req.extensions_mut().insert(GrpcMethod::new(
-                "milvus.proto.milvus.MilvusService",
-                "SelectGrant",
-            ));
+            req.extensions_mut()
+                .insert(
+                    GrpcMethod::new("milvus.proto.milvus.MilvusService", "SelectGrant"),
+                );
             self.inner.unary(req, path, codec).await
         }
         pub async fn get_version(
             &mut self,
             request: impl tonic::IntoRequest<super::GetVersionRequest>,
-<<<<<<< HEAD
-        ) -> std::result::Result<tonic::Response<super::GetVersionResponse>, tonic::Status>
-        {
-=======
-        ) -> Result<tonic::Response<super::GetVersionResponse>, tonic::Status> {
-<<<<<<< HEAD
->>>>>>> d82a365 (format the code)
-            self.inner.ready().await.map_err(|e| {
-                tonic::Status::new(
-                    tonic::Code::Unknown,
-                    format!("Service was not ready: {}", e.into()),
-                )
-            })?;
-=======
+        ) -> std::result::Result<
+            tonic::Response<super::GetVersionResponse>,
+            tonic::Status,
+        > {
             self.inner
                 .ready()
                 .await
@@ -5521,35 +4707,24 @@ pub mod milvus_service_client {
                         format!("Service was not ready: {}", e.into()),
                     )
                 })?;
->>>>>>> c00d092 (update the proto file to the latest 2.5)
             let codec = tonic::codec::ProstCodec::default();
             let path = http::uri::PathAndQuery::from_static(
                 "/milvus.proto.milvus.MilvusService/GetVersion",
             );
             let mut req = request.into_request();
-            req.extensions_mut().insert(GrpcMethod::new(
-                "milvus.proto.milvus.MilvusService",
-                "GetVersion",
-            ));
+            req.extensions_mut()
+                .insert(
+                    GrpcMethod::new("milvus.proto.milvus.MilvusService", "GetVersion"),
+                );
             self.inner.unary(req, path, codec).await
         }
         pub async fn check_health(
             &mut self,
             request: impl tonic::IntoRequest<super::CheckHealthRequest>,
-<<<<<<< HEAD
-        ) -> std::result::Result<tonic::Response<super::CheckHealthResponse>, tonic::Status>
-        {
-=======
-        ) -> Result<tonic::Response<super::CheckHealthResponse>, tonic::Status> {
-<<<<<<< HEAD
->>>>>>> d82a365 (format the code)
-            self.inner.ready().await.map_err(|e| {
-                tonic::Status::new(
-                    tonic::Code::Unknown,
-                    format!("Service was not ready: {}", e.into()),
-                )
-            })?;
-=======
+        ) -> std::result::Result<
+            tonic::Response<super::CheckHealthResponse>,
+            tonic::Status,
+        > {
             self.inner
                 .ready()
                 .await
@@ -5559,35 +4734,24 @@ pub mod milvus_service_client {
                         format!("Service was not ready: {}", e.into()),
                     )
                 })?;
->>>>>>> c00d092 (update the proto file to the latest 2.5)
             let codec = tonic::codec::ProstCodec::default();
             let path = http::uri::PathAndQuery::from_static(
                 "/milvus.proto.milvus.MilvusService/CheckHealth",
             );
             let mut req = request.into_request();
-            req.extensions_mut().insert(GrpcMethod::new(
-                "milvus.proto.milvus.MilvusService",
-                "CheckHealth",
-            ));
+            req.extensions_mut()
+                .insert(
+                    GrpcMethod::new("milvus.proto.milvus.MilvusService", "CheckHealth"),
+                );
             self.inner.unary(req, path, codec).await
         }
         pub async fn create_resource_group(
             &mut self,
             request: impl tonic::IntoRequest<super::CreateResourceGroupRequest>,
-<<<<<<< HEAD
-        ) -> std::result::Result<tonic::Response<super::super::common::Status>, tonic::Status>
-        {
-=======
-        ) -> Result<tonic::Response<super::super::common::Status>, tonic::Status> {
-<<<<<<< HEAD
->>>>>>> d82a365 (format the code)
-            self.inner.ready().await.map_err(|e| {
-                tonic::Status::new(
-                    tonic::Code::Unknown,
-                    format!("Service was not ready: {}", e.into()),
-                )
-            })?;
-=======
+        ) -> std::result::Result<
+            tonic::Response<super::super::common::Status>,
+            tonic::Status,
+        > {
             self.inner
                 .ready()
                 .await
@@ -5597,35 +4761,27 @@ pub mod milvus_service_client {
                         format!("Service was not ready: {}", e.into()),
                     )
                 })?;
->>>>>>> c00d092 (update the proto file to the latest 2.5)
             let codec = tonic::codec::ProstCodec::default();
             let path = http::uri::PathAndQuery::from_static(
                 "/milvus.proto.milvus.MilvusService/CreateResourceGroup",
             );
             let mut req = request.into_request();
-            req.extensions_mut().insert(GrpcMethod::new(
-                "milvus.proto.milvus.MilvusService",
-                "CreateResourceGroup",
-            ));
+            req.extensions_mut()
+                .insert(
+                    GrpcMethod::new(
+                        "milvus.proto.milvus.MilvusService",
+                        "CreateResourceGroup",
+                    ),
+                );
             self.inner.unary(req, path, codec).await
         }
         pub async fn drop_resource_group(
             &mut self,
             request: impl tonic::IntoRequest<super::DropResourceGroupRequest>,
-<<<<<<< HEAD
-        ) -> std::result::Result<tonic::Response<super::super::common::Status>, tonic::Status>
-        {
-=======
-        ) -> Result<tonic::Response<super::super::common::Status>, tonic::Status> {
-<<<<<<< HEAD
->>>>>>> d82a365 (format the code)
-            self.inner.ready().await.map_err(|e| {
-                tonic::Status::new(
-                    tonic::Code::Unknown,
-                    format!("Service was not ready: {}", e.into()),
-                )
-            })?;
-=======
+        ) -> std::result::Result<
+            tonic::Response<super::super::common::Status>,
+            tonic::Status,
+        > {
             self.inner
                 .ready()
                 .await
@@ -5635,35 +4791,27 @@ pub mod milvus_service_client {
                         format!("Service was not ready: {}", e.into()),
                     )
                 })?;
->>>>>>> c00d092 (update the proto file to the latest 2.5)
             let codec = tonic::codec::ProstCodec::default();
             let path = http::uri::PathAndQuery::from_static(
                 "/milvus.proto.milvus.MilvusService/DropResourceGroup",
             );
             let mut req = request.into_request();
-            req.extensions_mut().insert(GrpcMethod::new(
-                "milvus.proto.milvus.MilvusService",
-                "DropResourceGroup",
-            ));
+            req.extensions_mut()
+                .insert(
+                    GrpcMethod::new(
+                        "milvus.proto.milvus.MilvusService",
+                        "DropResourceGroup",
+                    ),
+                );
             self.inner.unary(req, path, codec).await
         }
         pub async fn update_resource_groups(
             &mut self,
             request: impl tonic::IntoRequest<super::UpdateResourceGroupsRequest>,
-<<<<<<< HEAD
-        ) -> std::result::Result<tonic::Response<super::super::common::Status>, tonic::Status>
-        {
-=======
-        ) -> Result<tonic::Response<super::super::common::Status>, tonic::Status> {
-<<<<<<< HEAD
->>>>>>> d82a365 (format the code)
-            self.inner.ready().await.map_err(|e| {
-                tonic::Status::new(
-                    tonic::Code::Unknown,
-                    format!("Service was not ready: {}", e.into()),
-                )
-            })?;
-=======
+        ) -> std::result::Result<
+            tonic::Response<super::super::common::Status>,
+            tonic::Status,
+        > {
             self.inner
                 .ready()
                 .await
@@ -5673,35 +4821,27 @@ pub mod milvus_service_client {
                         format!("Service was not ready: {}", e.into()),
                     )
                 })?;
->>>>>>> c00d092 (update the proto file to the latest 2.5)
             let codec = tonic::codec::ProstCodec::default();
             let path = http::uri::PathAndQuery::from_static(
                 "/milvus.proto.milvus.MilvusService/UpdateResourceGroups",
             );
             let mut req = request.into_request();
-            req.extensions_mut().insert(GrpcMethod::new(
-                "milvus.proto.milvus.MilvusService",
-                "UpdateResourceGroups",
-            ));
+            req.extensions_mut()
+                .insert(
+                    GrpcMethod::new(
+                        "milvus.proto.milvus.MilvusService",
+                        "UpdateResourceGroups",
+                    ),
+                );
             self.inner.unary(req, path, codec).await
         }
         pub async fn transfer_node(
             &mut self,
             request: impl tonic::IntoRequest<super::TransferNodeRequest>,
-<<<<<<< HEAD
-        ) -> std::result::Result<tonic::Response<super::super::common::Status>, tonic::Status>
-        {
-=======
-        ) -> Result<tonic::Response<super::super::common::Status>, tonic::Status> {
-<<<<<<< HEAD
->>>>>>> d82a365 (format the code)
-            self.inner.ready().await.map_err(|e| {
-                tonic::Status::new(
-                    tonic::Code::Unknown,
-                    format!("Service was not ready: {}", e.into()),
-                )
-            })?;
-=======
+        ) -> std::result::Result<
+            tonic::Response<super::super::common::Status>,
+            tonic::Status,
+        > {
             self.inner
                 .ready()
                 .await
@@ -5711,35 +4851,24 @@ pub mod milvus_service_client {
                         format!("Service was not ready: {}", e.into()),
                     )
                 })?;
->>>>>>> c00d092 (update the proto file to the latest 2.5)
             let codec = tonic::codec::ProstCodec::default();
             let path = http::uri::PathAndQuery::from_static(
                 "/milvus.proto.milvus.MilvusService/TransferNode",
             );
             let mut req = request.into_request();
-            req.extensions_mut().insert(GrpcMethod::new(
-                "milvus.proto.milvus.MilvusService",
-                "TransferNode",
-            ));
+            req.extensions_mut()
+                .insert(
+                    GrpcMethod::new("milvus.proto.milvus.MilvusService", "TransferNode"),
+                );
             self.inner.unary(req, path, codec).await
         }
         pub async fn transfer_replica(
             &mut self,
             request: impl tonic::IntoRequest<super::TransferReplicaRequest>,
-<<<<<<< HEAD
-        ) -> std::result::Result<tonic::Response<super::super::common::Status>, tonic::Status>
-        {
-=======
-        ) -> Result<tonic::Response<super::super::common::Status>, tonic::Status> {
-<<<<<<< HEAD
->>>>>>> d82a365 (format the code)
-            self.inner.ready().await.map_err(|e| {
-                tonic::Status::new(
-                    tonic::Code::Unknown,
-                    format!("Service was not ready: {}", e.into()),
-                )
-            })?;
-=======
+        ) -> std::result::Result<
+            tonic::Response<super::super::common::Status>,
+            tonic::Status,
+        > {
             self.inner
                 .ready()
                 .await
@@ -5749,35 +4878,27 @@ pub mod milvus_service_client {
                         format!("Service was not ready: {}", e.into()),
                     )
                 })?;
->>>>>>> c00d092 (update the proto file to the latest 2.5)
             let codec = tonic::codec::ProstCodec::default();
             let path = http::uri::PathAndQuery::from_static(
                 "/milvus.proto.milvus.MilvusService/TransferReplica",
             );
             let mut req = request.into_request();
-            req.extensions_mut().insert(GrpcMethod::new(
-                "milvus.proto.milvus.MilvusService",
-                "TransferReplica",
-            ));
+            req.extensions_mut()
+                .insert(
+                    GrpcMethod::new(
+                        "milvus.proto.milvus.MilvusService",
+                        "TransferReplica",
+                    ),
+                );
             self.inner.unary(req, path, codec).await
         }
         pub async fn list_resource_groups(
             &mut self,
             request: impl tonic::IntoRequest<super::ListResourceGroupsRequest>,
-<<<<<<< HEAD
-        ) -> std::result::Result<tonic::Response<super::ListResourceGroupsResponse>, tonic::Status>
-        {
-=======
-        ) -> Result<tonic::Response<super::ListResourceGroupsResponse>, tonic::Status> {
-<<<<<<< HEAD
->>>>>>> d82a365 (format the code)
-            self.inner.ready().await.map_err(|e| {
-                tonic::Status::new(
-                    tonic::Code::Unknown,
-                    format!("Service was not ready: {}", e.into()),
-                )
-            })?;
-=======
+        ) -> std::result::Result<
+            tonic::Response<super::ListResourceGroupsResponse>,
+            tonic::Status,
+        > {
             self.inner
                 .ready()
                 .await
@@ -5787,36 +4908,24 @@ pub mod milvus_service_client {
                         format!("Service was not ready: {}", e.into()),
                     )
                 })?;
->>>>>>> c00d092 (update the proto file to the latest 2.5)
             let codec = tonic::codec::ProstCodec::default();
             let path = http::uri::PathAndQuery::from_static(
                 "/milvus.proto.milvus.MilvusService/ListResourceGroups",
             );
             let mut req = request.into_request();
-            req.extensions_mut().insert(GrpcMethod::new(
-                "milvus.proto.milvus.MilvusService",
-                "ListResourceGroups",
-            ));
+            req.extensions_mut()
+                .insert(
+                    GrpcMethod::new(
+                        "milvus.proto.milvus.MilvusService",
+                        "ListResourceGroups",
+                    ),
+                );
             self.inner.unary(req, path, codec).await
         }
         pub async fn describe_resource_group(
             &mut self,
             request: impl tonic::IntoRequest<super::DescribeResourceGroupRequest>,
-<<<<<<< HEAD
-<<<<<<< HEAD
-        ) -> std::result::Result<tonic::Response<super::DescribeResourceGroupResponse>, tonic::Status>
-        {
-=======
-        ) -> Result<tonic::Response<super::DescribeResourceGroupResponse>, tonic::Status> {
->>>>>>> d82a365 (format the code)
-            self.inner.ready().await.map_err(|e| {
-                tonic::Status::new(
-                    tonic::Code::Unknown,
-                    format!("Service was not ready: {}", e.into()),
-                )
-            })?;
-=======
-        ) -> Result<
+        ) -> std::result::Result<
             tonic::Response<super::DescribeResourceGroupResponse>,
             tonic::Status,
         > {
@@ -5829,35 +4938,27 @@ pub mod milvus_service_client {
                         format!("Service was not ready: {}", e.into()),
                     )
                 })?;
->>>>>>> c00d092 (update the proto file to the latest 2.5)
             let codec = tonic::codec::ProstCodec::default();
             let path = http::uri::PathAndQuery::from_static(
                 "/milvus.proto.milvus.MilvusService/DescribeResourceGroup",
             );
             let mut req = request.into_request();
-            req.extensions_mut().insert(GrpcMethod::new(
-                "milvus.proto.milvus.MilvusService",
-                "DescribeResourceGroup",
-            ));
+            req.extensions_mut()
+                .insert(
+                    GrpcMethod::new(
+                        "milvus.proto.milvus.MilvusService",
+                        "DescribeResourceGroup",
+                    ),
+                );
             self.inner.unary(req, path, codec).await
         }
         pub async fn rename_collection(
             &mut self,
             request: impl tonic::IntoRequest<super::RenameCollectionRequest>,
-<<<<<<< HEAD
-        ) -> std::result::Result<tonic::Response<super::super::common::Status>, tonic::Status>
-        {
-=======
-        ) -> Result<tonic::Response<super::super::common::Status>, tonic::Status> {
-<<<<<<< HEAD
->>>>>>> d82a365 (format the code)
-            self.inner.ready().await.map_err(|e| {
-                tonic::Status::new(
-                    tonic::Code::Unknown,
-                    format!("Service was not ready: {}", e.into()),
-                )
-            })?;
-=======
+        ) -> std::result::Result<
+            tonic::Response<super::super::common::Status>,
+            tonic::Status,
+        > {
             self.inner
                 .ready()
                 .await
@@ -5867,42 +4968,26 @@ pub mod milvus_service_client {
                         format!("Service was not ready: {}", e.into()),
                     )
                 })?;
->>>>>>> c00d092 (update the proto file to the latest 2.5)
             let codec = tonic::codec::ProstCodec::default();
             let path = http::uri::PathAndQuery::from_static(
                 "/milvus.proto.milvus.MilvusService/RenameCollection",
             );
             let mut req = request.into_request();
-            req.extensions_mut().insert(GrpcMethod::new(
-                "milvus.proto.milvus.MilvusService",
-                "RenameCollection",
-            ));
+            req.extensions_mut()
+                .insert(
+                    GrpcMethod::new(
+                        "milvus.proto.milvus.MilvusService",
+                        "RenameCollection",
+                    ),
+                );
             self.inner.unary(req, path, codec).await
         }
         pub async fn list_indexed_segment(
             &mut self,
-<<<<<<< HEAD
-            request: impl tonic::IntoRequest<super::super::feder::ListIndexedSegmentRequest>,
-<<<<<<< HEAD
-        ) -> std::result::Result<
-            tonic::Response<super::super::feder::ListIndexedSegmentResponse>,
-            tonic::Status,
-        > {
-=======
-        ) -> Result<tonic::Response<super::super::feder::ListIndexedSegmentResponse>, tonic::Status>
-        {
->>>>>>> d82a365 (format the code)
-            self.inner.ready().await.map_err(|e| {
-                tonic::Status::new(
-                    tonic::Code::Unknown,
-                    format!("Service was not ready: {}", e.into()),
-                )
-            })?;
-=======
             request: impl tonic::IntoRequest<
                 super::super::feder::ListIndexedSegmentRequest,
             >,
-        ) -> Result<
+        ) -> std::result::Result<
             tonic::Response<super::super::feder::ListIndexedSegmentResponse>,
             tonic::Status,
         > {
@@ -5915,32 +5000,26 @@ pub mod milvus_service_client {
                         format!("Service was not ready: {}", e.into()),
                     )
                 })?;
->>>>>>> c00d092 (update the proto file to the latest 2.5)
             let codec = tonic::codec::ProstCodec::default();
             let path = http::uri::PathAndQuery::from_static(
                 "/milvus.proto.milvus.MilvusService/ListIndexedSegment",
             );
             let mut req = request.into_request();
-            req.extensions_mut().insert(GrpcMethod::new(
-                "milvus.proto.milvus.MilvusService",
-                "ListIndexedSegment",
-            ));
+            req.extensions_mut()
+                .insert(
+                    GrpcMethod::new(
+                        "milvus.proto.milvus.MilvusService",
+                        "ListIndexedSegment",
+                    ),
+                );
             self.inner.unary(req, path, codec).await
         }
         pub async fn describe_segment_index_data(
             &mut self,
-<<<<<<< HEAD
-            request: impl tonic::IntoRequest<super::super::feder::DescribeSegmentIndexDataRequest>,
-<<<<<<< HEAD
-        ) -> std::result::Result<
-=======
-=======
             request: impl tonic::IntoRequest<
                 super::super::feder::DescribeSegmentIndexDataRequest,
             >,
->>>>>>> c00d092 (update the proto file to the latest 2.5)
-        ) -> Result<
->>>>>>> d82a365 (format the code)
+        ) -> std::result::Result<
             tonic::Response<super::super::feder::DescribeSegmentIndexDataResponse>,
             tonic::Status,
         > {
@@ -5958,39 +5037,22 @@ pub mod milvus_service_client {
                 "/milvus.proto.milvus.MilvusService/DescribeSegmentIndexData",
             );
             let mut req = request.into_request();
-            req.extensions_mut().insert(GrpcMethod::new(
-                "milvus.proto.milvus.MilvusService",
-                "DescribeSegmentIndexData",
-            ));
+            req.extensions_mut()
+                .insert(
+                    GrpcMethod::new(
+                        "milvus.proto.milvus.MilvusService",
+                        "DescribeSegmentIndexData",
+                    ),
+                );
             self.inner.unary(req, path, codec).await
         }
         pub async fn connect(
             &mut self,
             request: impl tonic::IntoRequest<super::ConnectRequest>,
-<<<<<<< HEAD
-        ) -> std::result::Result<tonic::Response<super::ConnectResponse>, tonic::Status> {
-=======
-        ) -> Result<tonic::Response<super::ConnectResponse>, tonic::Status> {
-<<<<<<< HEAD
->>>>>>> d82a365 (format the code)
-            self.inner.ready().await.map_err(|e| {
-                tonic::Status::new(
-                    tonic::Code::Unknown,
-                    format!("Service was not ready: {}", e.into()),
-                )
-            })?;
-            let codec = tonic::codec::ProstCodec::default();
-            let path =
-                http::uri::PathAndQuery::from_static("/milvus.proto.milvus.MilvusService/Connect");
-<<<<<<< HEAD
-            let mut req = request.into_request();
-            req.extensions_mut().insert(GrpcMethod::new(
-                "milvus.proto.milvus.MilvusService",
-                "Connect",
-            ));
-            self.inner.unary(req, path, codec).await
-=======
-=======
+        ) -> std::result::Result<
+            tonic::Response<super::ConnectResponse>,
+            tonic::Status,
+        > {
             self.inner
                 .ready()
                 .await
@@ -6004,27 +5066,18 @@ pub mod milvus_service_client {
             let path = http::uri::PathAndQuery::from_static(
                 "/milvus.proto.milvus.MilvusService/Connect",
             );
->>>>>>> c00d092 (update the proto file to the latest 2.5)
-            self.inner.unary(request.into_request(), path, codec).await
->>>>>>> d82a365 (format the code)
+            let mut req = request.into_request();
+            req.extensions_mut()
+                .insert(GrpcMethod::new("milvus.proto.milvus.MilvusService", "Connect"));
+            self.inner.unary(req, path, codec).await
         }
         pub async fn alloc_timestamp(
             &mut self,
             request: impl tonic::IntoRequest<super::AllocTimestampRequest>,
-<<<<<<< HEAD
-        ) -> std::result::Result<tonic::Response<super::AllocTimestampResponse>, tonic::Status>
-        {
-=======
-        ) -> Result<tonic::Response<super::AllocTimestampResponse>, tonic::Status> {
-<<<<<<< HEAD
->>>>>>> d82a365 (format the code)
-            self.inner.ready().await.map_err(|e| {
-                tonic::Status::new(
-                    tonic::Code::Unknown,
-                    format!("Service was not ready: {}", e.into()),
-                )
-            })?;
-=======
+        ) -> std::result::Result<
+            tonic::Response<super::AllocTimestampResponse>,
+            tonic::Status,
+        > {
             self.inner
                 .ready()
                 .await
@@ -6034,35 +5087,27 @@ pub mod milvus_service_client {
                         format!("Service was not ready: {}", e.into()),
                     )
                 })?;
->>>>>>> c00d092 (update the proto file to the latest 2.5)
             let codec = tonic::codec::ProstCodec::default();
             let path = http::uri::PathAndQuery::from_static(
                 "/milvus.proto.milvus.MilvusService/AllocTimestamp",
             );
             let mut req = request.into_request();
-            req.extensions_mut().insert(GrpcMethod::new(
-                "milvus.proto.milvus.MilvusService",
-                "AllocTimestamp",
-            ));
+            req.extensions_mut()
+                .insert(
+                    GrpcMethod::new(
+                        "milvus.proto.milvus.MilvusService",
+                        "AllocTimestamp",
+                    ),
+                );
             self.inner.unary(req, path, codec).await
         }
         pub async fn create_database(
             &mut self,
             request: impl tonic::IntoRequest<super::CreateDatabaseRequest>,
-<<<<<<< HEAD
-        ) -> std::result::Result<tonic::Response<super::super::common::Status>, tonic::Status>
-        {
-=======
-        ) -> Result<tonic::Response<super::super::common::Status>, tonic::Status> {
-<<<<<<< HEAD
->>>>>>> d82a365 (format the code)
-            self.inner.ready().await.map_err(|e| {
-                tonic::Status::new(
-                    tonic::Code::Unknown,
-                    format!("Service was not ready: {}", e.into()),
-                )
-            })?;
-=======
+        ) -> std::result::Result<
+            tonic::Response<super::super::common::Status>,
+            tonic::Status,
+        > {
             self.inner
                 .ready()
                 .await
@@ -6072,35 +5117,27 @@ pub mod milvus_service_client {
                         format!("Service was not ready: {}", e.into()),
                     )
                 })?;
->>>>>>> c00d092 (update the proto file to the latest 2.5)
             let codec = tonic::codec::ProstCodec::default();
             let path = http::uri::PathAndQuery::from_static(
                 "/milvus.proto.milvus.MilvusService/CreateDatabase",
             );
             let mut req = request.into_request();
-            req.extensions_mut().insert(GrpcMethod::new(
-                "milvus.proto.milvus.MilvusService",
-                "CreateDatabase",
-            ));
+            req.extensions_mut()
+                .insert(
+                    GrpcMethod::new(
+                        "milvus.proto.milvus.MilvusService",
+                        "CreateDatabase",
+                    ),
+                );
             self.inner.unary(req, path, codec).await
         }
         pub async fn drop_database(
             &mut self,
             request: impl tonic::IntoRequest<super::DropDatabaseRequest>,
-<<<<<<< HEAD
-        ) -> std::result::Result<tonic::Response<super::super::common::Status>, tonic::Status>
-        {
-=======
-        ) -> Result<tonic::Response<super::super::common::Status>, tonic::Status> {
-<<<<<<< HEAD
->>>>>>> d82a365 (format the code)
-            self.inner.ready().await.map_err(|e| {
-                tonic::Status::new(
-                    tonic::Code::Unknown,
-                    format!("Service was not ready: {}", e.into()),
-                )
-            })?;
-=======
+        ) -> std::result::Result<
+            tonic::Response<super::super::common::Status>,
+            tonic::Status,
+        > {
             self.inner
                 .ready()
                 .await
@@ -6110,35 +5147,24 @@ pub mod milvus_service_client {
                         format!("Service was not ready: {}", e.into()),
                     )
                 })?;
->>>>>>> c00d092 (update the proto file to the latest 2.5)
             let codec = tonic::codec::ProstCodec::default();
             let path = http::uri::PathAndQuery::from_static(
                 "/milvus.proto.milvus.MilvusService/DropDatabase",
             );
             let mut req = request.into_request();
-            req.extensions_mut().insert(GrpcMethod::new(
-                "milvus.proto.milvus.MilvusService",
-                "DropDatabase",
-            ));
+            req.extensions_mut()
+                .insert(
+                    GrpcMethod::new("milvus.proto.milvus.MilvusService", "DropDatabase"),
+                );
             self.inner.unary(req, path, codec).await
         }
         pub async fn list_databases(
             &mut self,
             request: impl tonic::IntoRequest<super::ListDatabasesRequest>,
-<<<<<<< HEAD
-        ) -> std::result::Result<tonic::Response<super::ListDatabasesResponse>, tonic::Status>
-        {
-=======
-        ) -> Result<tonic::Response<super::ListDatabasesResponse>, tonic::Status> {
-<<<<<<< HEAD
->>>>>>> d82a365 (format the code)
-            self.inner.ready().await.map_err(|e| {
-                tonic::Status::new(
-                    tonic::Code::Unknown,
-                    format!("Service was not ready: {}", e.into()),
-                )
-            })?;
-=======
+        ) -> std::result::Result<
+            tonic::Response<super::ListDatabasesResponse>,
+            tonic::Status,
+        > {
             self.inner
                 .ready()
                 .await
@@ -6148,35 +5174,24 @@ pub mod milvus_service_client {
                         format!("Service was not ready: {}", e.into()),
                     )
                 })?;
->>>>>>> c00d092 (update the proto file to the latest 2.5)
             let codec = tonic::codec::ProstCodec::default();
             let path = http::uri::PathAndQuery::from_static(
                 "/milvus.proto.milvus.MilvusService/ListDatabases",
             );
             let mut req = request.into_request();
-            req.extensions_mut().insert(GrpcMethod::new(
-                "milvus.proto.milvus.MilvusService",
-                "ListDatabases",
-            ));
+            req.extensions_mut()
+                .insert(
+                    GrpcMethod::new("milvus.proto.milvus.MilvusService", "ListDatabases"),
+                );
             self.inner.unary(req, path, codec).await
         }
         pub async fn alter_database(
             &mut self,
             request: impl tonic::IntoRequest<super::AlterDatabaseRequest>,
-<<<<<<< HEAD
-        ) -> std::result::Result<tonic::Response<super::super::common::Status>, tonic::Status>
-        {
-=======
-        ) -> Result<tonic::Response<super::super::common::Status>, tonic::Status> {
-<<<<<<< HEAD
->>>>>>> d82a365 (format the code)
-            self.inner.ready().await.map_err(|e| {
-                tonic::Status::new(
-                    tonic::Code::Unknown,
-                    format!("Service was not ready: {}", e.into()),
-                )
-            })?;
-=======
+        ) -> std::result::Result<
+            tonic::Response<super::super::common::Status>,
+            tonic::Status,
+        > {
             self.inner
                 .ready()
                 .await
@@ -6186,35 +5201,24 @@ pub mod milvus_service_client {
                         format!("Service was not ready: {}", e.into()),
                     )
                 })?;
->>>>>>> c00d092 (update the proto file to the latest 2.5)
             let codec = tonic::codec::ProstCodec::default();
             let path = http::uri::PathAndQuery::from_static(
                 "/milvus.proto.milvus.MilvusService/AlterDatabase",
             );
             let mut req = request.into_request();
-            req.extensions_mut().insert(GrpcMethod::new(
-                "milvus.proto.milvus.MilvusService",
-                "AlterDatabase",
-            ));
+            req.extensions_mut()
+                .insert(
+                    GrpcMethod::new("milvus.proto.milvus.MilvusService", "AlterDatabase"),
+                );
             self.inner.unary(req, path, codec).await
         }
         pub async fn describe_database(
             &mut self,
             request: impl tonic::IntoRequest<super::DescribeDatabaseRequest>,
-<<<<<<< HEAD
-        ) -> std::result::Result<tonic::Response<super::DescribeDatabaseResponse>, tonic::Status>
-        {
-=======
-        ) -> Result<tonic::Response<super::DescribeDatabaseResponse>, tonic::Status> {
-<<<<<<< HEAD
->>>>>>> d82a365 (format the code)
-            self.inner.ready().await.map_err(|e| {
-                tonic::Status::new(
-                    tonic::Code::Unknown,
-                    format!("Service was not ready: {}", e.into()),
-                )
-            })?;
-=======
+        ) -> std::result::Result<
+            tonic::Response<super::DescribeDatabaseResponse>,
+            tonic::Status,
+        > {
             self.inner
                 .ready()
                 .await
@@ -6224,35 +5228,27 @@ pub mod milvus_service_client {
                         format!("Service was not ready: {}", e.into()),
                     )
                 })?;
->>>>>>> c00d092 (update the proto file to the latest 2.5)
             let codec = tonic::codec::ProstCodec::default();
             let path = http::uri::PathAndQuery::from_static(
                 "/milvus.proto.milvus.MilvusService/DescribeDatabase",
             );
             let mut req = request.into_request();
-            req.extensions_mut().insert(GrpcMethod::new(
-                "milvus.proto.milvus.MilvusService",
-                "DescribeDatabase",
-            ));
+            req.extensions_mut()
+                .insert(
+                    GrpcMethod::new(
+                        "milvus.proto.milvus.MilvusService",
+                        "DescribeDatabase",
+                    ),
+                );
             self.inner.unary(req, path, codec).await
         }
         pub async fn replicate_message(
             &mut self,
             request: impl tonic::IntoRequest<super::ReplicateMessageRequest>,
-<<<<<<< HEAD
-        ) -> std::result::Result<tonic::Response<super::ReplicateMessageResponse>, tonic::Status>
-        {
-=======
-        ) -> Result<tonic::Response<super::ReplicateMessageResponse>, tonic::Status> {
-<<<<<<< HEAD
->>>>>>> d82a365 (format the code)
-            self.inner.ready().await.map_err(|e| {
-                tonic::Status::new(
-                    tonic::Code::Unknown,
-                    format!("Service was not ready: {}", e.into()),
-                )
-            })?;
-=======
+        ) -> std::result::Result<
+            tonic::Response<super::ReplicateMessageResponse>,
+            tonic::Status,
+        > {
             self.inner
                 .ready()
                 .await
@@ -6262,35 +5258,27 @@ pub mod milvus_service_client {
                         format!("Service was not ready: {}", e.into()),
                     )
                 })?;
->>>>>>> c00d092 (update the proto file to the latest 2.5)
             let codec = tonic::codec::ProstCodec::default();
             let path = http::uri::PathAndQuery::from_static(
                 "/milvus.proto.milvus.MilvusService/ReplicateMessage",
             );
             let mut req = request.into_request();
-            req.extensions_mut().insert(GrpcMethod::new(
-                "milvus.proto.milvus.MilvusService",
-                "ReplicateMessage",
-            ));
+            req.extensions_mut()
+                .insert(
+                    GrpcMethod::new(
+                        "milvus.proto.milvus.MilvusService",
+                        "ReplicateMessage",
+                    ),
+                );
             self.inner.unary(req, path, codec).await
         }
         pub async fn backup_rbac(
             &mut self,
             request: impl tonic::IntoRequest<super::BackupRbacMetaRequest>,
-<<<<<<< HEAD
-        ) -> std::result::Result<tonic::Response<super::BackupRbacMetaResponse>, tonic::Status>
-        {
-=======
-        ) -> Result<tonic::Response<super::BackupRbacMetaResponse>, tonic::Status> {
-<<<<<<< HEAD
->>>>>>> d82a365 (format the code)
-            self.inner.ready().await.map_err(|e| {
-                tonic::Status::new(
-                    tonic::Code::Unknown,
-                    format!("Service was not ready: {}", e.into()),
-                )
-            })?;
-=======
+        ) -> std::result::Result<
+            tonic::Response<super::BackupRbacMetaResponse>,
+            tonic::Status,
+        > {
             self.inner
                 .ready()
                 .await
@@ -6300,35 +5288,24 @@ pub mod milvus_service_client {
                         format!("Service was not ready: {}", e.into()),
                     )
                 })?;
->>>>>>> c00d092 (update the proto file to the latest 2.5)
             let codec = tonic::codec::ProstCodec::default();
             let path = http::uri::PathAndQuery::from_static(
                 "/milvus.proto.milvus.MilvusService/BackupRBAC",
             );
             let mut req = request.into_request();
-            req.extensions_mut().insert(GrpcMethod::new(
-                "milvus.proto.milvus.MilvusService",
-                "BackupRBAC",
-            ));
+            req.extensions_mut()
+                .insert(
+                    GrpcMethod::new("milvus.proto.milvus.MilvusService", "BackupRBAC"),
+                );
             self.inner.unary(req, path, codec).await
         }
         pub async fn restore_rbac(
             &mut self,
             request: impl tonic::IntoRequest<super::RestoreRbacMetaRequest>,
-<<<<<<< HEAD
-        ) -> std::result::Result<tonic::Response<super::super::common::Status>, tonic::Status>
-        {
-=======
-        ) -> Result<tonic::Response<super::super::common::Status>, tonic::Status> {
-<<<<<<< HEAD
->>>>>>> d82a365 (format the code)
-            self.inner.ready().await.map_err(|e| {
-                tonic::Status::new(
-                    tonic::Code::Unknown,
-                    format!("Service was not ready: {}", e.into()),
-                )
-            })?;
-=======
+        ) -> std::result::Result<
+            tonic::Response<super::super::common::Status>,
+            tonic::Status,
+        > {
             self.inner
                 .ready()
                 .await
@@ -6338,35 +5315,24 @@ pub mod milvus_service_client {
                         format!("Service was not ready: {}", e.into()),
                     )
                 })?;
->>>>>>> c00d092 (update the proto file to the latest 2.5)
             let codec = tonic::codec::ProstCodec::default();
             let path = http::uri::PathAndQuery::from_static(
                 "/milvus.proto.milvus.MilvusService/RestoreRBAC",
             );
             let mut req = request.into_request();
-            req.extensions_mut().insert(GrpcMethod::new(
-                "milvus.proto.milvus.MilvusService",
-                "RestoreRBAC",
-            ));
+            req.extensions_mut()
+                .insert(
+                    GrpcMethod::new("milvus.proto.milvus.MilvusService", "RestoreRBAC"),
+                );
             self.inner.unary(req, path, codec).await
         }
         pub async fn create_privilege_group(
             &mut self,
             request: impl tonic::IntoRequest<super::CreatePrivilegeGroupRequest>,
-<<<<<<< HEAD
-        ) -> std::result::Result<tonic::Response<super::super::common::Status>, tonic::Status>
-        {
-=======
-        ) -> Result<tonic::Response<super::super::common::Status>, tonic::Status> {
-<<<<<<< HEAD
->>>>>>> d82a365 (format the code)
-            self.inner.ready().await.map_err(|e| {
-                tonic::Status::new(
-                    tonic::Code::Unknown,
-                    format!("Service was not ready: {}", e.into()),
-                )
-            })?;
-=======
+        ) -> std::result::Result<
+            tonic::Response<super::super::common::Status>,
+            tonic::Status,
+        > {
             self.inner
                 .ready()
                 .await
@@ -6376,35 +5342,27 @@ pub mod milvus_service_client {
                         format!("Service was not ready: {}", e.into()),
                     )
                 })?;
->>>>>>> c00d092 (update the proto file to the latest 2.5)
             let codec = tonic::codec::ProstCodec::default();
             let path = http::uri::PathAndQuery::from_static(
                 "/milvus.proto.milvus.MilvusService/CreatePrivilegeGroup",
             );
             let mut req = request.into_request();
-            req.extensions_mut().insert(GrpcMethod::new(
-                "milvus.proto.milvus.MilvusService",
-                "CreatePrivilegeGroup",
-            ));
+            req.extensions_mut()
+                .insert(
+                    GrpcMethod::new(
+                        "milvus.proto.milvus.MilvusService",
+                        "CreatePrivilegeGroup",
+                    ),
+                );
             self.inner.unary(req, path, codec).await
         }
         pub async fn drop_privilege_group(
             &mut self,
             request: impl tonic::IntoRequest<super::DropPrivilegeGroupRequest>,
-<<<<<<< HEAD
-        ) -> std::result::Result<tonic::Response<super::super::common::Status>, tonic::Status>
-        {
-=======
-        ) -> Result<tonic::Response<super::super::common::Status>, tonic::Status> {
-<<<<<<< HEAD
->>>>>>> d82a365 (format the code)
-            self.inner.ready().await.map_err(|e| {
-                tonic::Status::new(
-                    tonic::Code::Unknown,
-                    format!("Service was not ready: {}", e.into()),
-                )
-            })?;
-=======
+        ) -> std::result::Result<
+            tonic::Response<super::super::common::Status>,
+            tonic::Status,
+        > {
             self.inner
                 .ready()
                 .await
@@ -6414,35 +5372,27 @@ pub mod milvus_service_client {
                         format!("Service was not ready: {}", e.into()),
                     )
                 })?;
->>>>>>> c00d092 (update the proto file to the latest 2.5)
             let codec = tonic::codec::ProstCodec::default();
             let path = http::uri::PathAndQuery::from_static(
                 "/milvus.proto.milvus.MilvusService/DropPrivilegeGroup",
             );
             let mut req = request.into_request();
-            req.extensions_mut().insert(GrpcMethod::new(
-                "milvus.proto.milvus.MilvusService",
-                "DropPrivilegeGroup",
-            ));
+            req.extensions_mut()
+                .insert(
+                    GrpcMethod::new(
+                        "milvus.proto.milvus.MilvusService",
+                        "DropPrivilegeGroup",
+                    ),
+                );
             self.inner.unary(req, path, codec).await
         }
         pub async fn list_privilege_groups(
             &mut self,
             request: impl tonic::IntoRequest<super::ListPrivilegeGroupsRequest>,
-<<<<<<< HEAD
-        ) -> std::result::Result<tonic::Response<super::ListPrivilegeGroupsResponse>, tonic::Status>
-        {
-=======
-        ) -> Result<tonic::Response<super::ListPrivilegeGroupsResponse>, tonic::Status> {
-<<<<<<< HEAD
->>>>>>> d82a365 (format the code)
-            self.inner.ready().await.map_err(|e| {
-                tonic::Status::new(
-                    tonic::Code::Unknown,
-                    format!("Service was not ready: {}", e.into()),
-                )
-            })?;
-=======
+        ) -> std::result::Result<
+            tonic::Response<super::ListPrivilegeGroupsResponse>,
+            tonic::Status,
+        > {
             self.inner
                 .ready()
                 .await
@@ -6452,35 +5402,27 @@ pub mod milvus_service_client {
                         format!("Service was not ready: {}", e.into()),
                     )
                 })?;
->>>>>>> c00d092 (update the proto file to the latest 2.5)
             let codec = tonic::codec::ProstCodec::default();
             let path = http::uri::PathAndQuery::from_static(
                 "/milvus.proto.milvus.MilvusService/ListPrivilegeGroups",
             );
             let mut req = request.into_request();
-            req.extensions_mut().insert(GrpcMethod::new(
-                "milvus.proto.milvus.MilvusService",
-                "ListPrivilegeGroups",
-            ));
+            req.extensions_mut()
+                .insert(
+                    GrpcMethod::new(
+                        "milvus.proto.milvus.MilvusService",
+                        "ListPrivilegeGroups",
+                    ),
+                );
             self.inner.unary(req, path, codec).await
         }
         pub async fn operate_privilege_group(
             &mut self,
             request: impl tonic::IntoRequest<super::OperatePrivilegeGroupRequest>,
-<<<<<<< HEAD
-        ) -> std::result::Result<tonic::Response<super::super::common::Status>, tonic::Status>
-        {
-=======
-        ) -> Result<tonic::Response<super::super::common::Status>, tonic::Status> {
-<<<<<<< HEAD
->>>>>>> d82a365 (format the code)
-            self.inner.ready().await.map_err(|e| {
-                tonic::Status::new(
-                    tonic::Code::Unknown,
-                    format!("Service was not ready: {}", e.into()),
-                )
-            })?;
-=======
+        ) -> std::result::Result<
+            tonic::Response<super::super::common::Status>,
+            tonic::Status,
+        > {
             self.inner
                 .ready()
                 .await
@@ -6490,35 +5432,27 @@ pub mod milvus_service_client {
                         format!("Service was not ready: {}", e.into()),
                     )
                 })?;
->>>>>>> c00d092 (update the proto file to the latest 2.5)
             let codec = tonic::codec::ProstCodec::default();
             let path = http::uri::PathAndQuery::from_static(
                 "/milvus.proto.milvus.MilvusService/OperatePrivilegeGroup",
             );
             let mut req = request.into_request();
-            req.extensions_mut().insert(GrpcMethod::new(
-                "milvus.proto.milvus.MilvusService",
-                "OperatePrivilegeGroup",
-            ));
+            req.extensions_mut()
+                .insert(
+                    GrpcMethod::new(
+                        "milvus.proto.milvus.MilvusService",
+                        "OperatePrivilegeGroup",
+                    ),
+                );
             self.inner.unary(req, path, codec).await
         }
         pub async fn run_analyzer(
             &mut self,
             request: impl tonic::IntoRequest<super::RunAnalyzerRequest>,
-<<<<<<< HEAD
-        ) -> std::result::Result<tonic::Response<super::RunAnalyzerResponse>, tonic::Status>
-        {
-=======
-        ) -> Result<tonic::Response<super::RunAnalyzerResponse>, tonic::Status> {
-<<<<<<< HEAD
->>>>>>> d82a365 (format the code)
-            self.inner.ready().await.map_err(|e| {
-                tonic::Status::new(
-                    tonic::Code::Unknown,
-                    format!("Service was not ready: {}", e.into()),
-                )
-            })?;
-=======
+        ) -> std::result::Result<
+            tonic::Response<super::RunAnalyzerResponse>,
+            tonic::Status,
+        > {
             self.inner
                 .ready()
                 .await
@@ -6528,16 +5462,15 @@ pub mod milvus_service_client {
                         format!("Service was not ready: {}", e.into()),
                     )
                 })?;
->>>>>>> c00d092 (update the proto file to the latest 2.5)
             let codec = tonic::codec::ProstCodec::default();
             let path = http::uri::PathAndQuery::from_static(
                 "/milvus.proto.milvus.MilvusService/RunAnalyzer",
             );
             let mut req = request.into_request();
-            req.extensions_mut().insert(GrpcMethod::new(
-                "milvus.proto.milvus.MilvusService",
-                "RunAnalyzer",
-            ));
+            req.extensions_mut()
+                .insert(
+                    GrpcMethod::new("milvus.proto.milvus.MilvusService", "RunAnalyzer"),
+                );
             self.inner.unary(req, path, codec).await
         }
     }
@@ -6619,20 +5552,10 @@ pub mod proxy_service_client {
         pub async fn register_link(
             &mut self,
             request: impl tonic::IntoRequest<super::RegisterLinkRequest>,
-<<<<<<< HEAD
-        ) -> std::result::Result<tonic::Response<super::RegisterLinkResponse>, tonic::Status>
-        {
-=======
-        ) -> Result<tonic::Response<super::RegisterLinkResponse>, tonic::Status> {
-<<<<<<< HEAD
->>>>>>> d82a365 (format the code)
-            self.inner.ready().await.map_err(|e| {
-                tonic::Status::new(
-                    tonic::Code::Unknown,
-                    format!("Service was not ready: {}", e.into()),
-                )
-            })?;
-=======
+        ) -> std::result::Result<
+            tonic::Response<super::RegisterLinkResponse>,
+            tonic::Status,
+        > {
             self.inner
                 .ready()
                 .await
@@ -6642,16 +5565,15 @@ pub mod proxy_service_client {
                         format!("Service was not ready: {}", e.into()),
                     )
                 })?;
->>>>>>> c00d092 (update the proto file to the latest 2.5)
             let codec = tonic::codec::ProstCodec::default();
             let path = http::uri::PathAndQuery::from_static(
                 "/milvus.proto.milvus.ProxyService/RegisterLink",
             );
             let mut req = request.into_request();
-            req.extensions_mut().insert(GrpcMethod::new(
-                "milvus.proto.milvus.ProxyService",
-                "RegisterLink",
-            ));
+            req.extensions_mut()
+                .insert(
+                    GrpcMethod::new("milvus.proto.milvus.ProxyService", "RegisterLink"),
+                );
             self.inner.unary(req, path, codec).await
         }
     }
